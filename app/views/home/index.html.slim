@@ -1,0 +1,62 @@
+#hero-area
+  .row
+    .large-12.columns
+      a name="hero"
+        h3 data-magellan-destination="hero" Hero Area
+
+        /ul.clearfix data-magellan-expedition="fixed"
+          /li= link_to "Contact", contact_path
+          /li= link_to "Our Work", root_path
+          /li= link_to "Services", root_path
+          /li= link_to "Home", root_path
+
+#home
+  div.fixed-nav-bar data-magellan-expedition="fixed" 
+    ul.sub-nav.right
+      li data-magellan-arrival="hero" 
+        a href="#hero-area"  Home
+      li data-magellan-arrival="services" 
+        a href="#services"  Services
+      li data-magellan-arrival="our-work" 
+        a href="#our-work"  Our Work
+      li data-magellan-arrival="contact" 
+        =link_to "Contact", contact_path
+
+  .row
+    .large-12.columns
+      h3 5tringy Design Company
+
+
+#services
+  .row
+    .large-12.columns
+      a name="services"
+      h3.section-heading data-magellan-destination="services"  Services
+
+
+#our-work
+  .row
+    .large-12.columns
+      a name="our-work"
+      h3.section-heading data-magellan-destination="our-work"  Our Work
+
+#contact
+  .row
+    .large-12.columns
+      h1 Contact Me
+      p Fill in the form below to send me an email.
+  .row
+    .large-4.medium-6.columns
+      /= simple_form_for @contact_email do |f|
+        /= f.input :first_name
+        /= f.input :last_name
+        /= f.input :email
+        /= f.input :subject
+        /= f.input :message
+        /= f.submit class:"button expand"
+
+
+footer
+  .row
+    .large-12.columns
+      p Footer Copyrights and stuffs.

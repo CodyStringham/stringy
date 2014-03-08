@@ -1,0 +1,80 @@
+// Place all the styles related to the home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+* {
+  transition: background .3s ease, color .3s ease, box-shadow .3s ease;
+  -webkit-transition: background .3s ease, color .3s ease, -webkit-box-shadow .3s ease;
+  -moz-transition: background .3s ease, color .3s ease, -moz-box-shadow .3s ease;
+  -o-transition: background .3s ease, color .3s ease, -o-box-shadow .3s ease;
+
+}
+
+html, body {
+  margin: 0px;
+  padding: 0px;
+}
+
+.section-heading {
+  padding-top: 140px;
+}
+
+#hero-area {
+  background: $primary-color;
+  height: 500px;
+}
+
+
+.fixed-nav-bar {
+  margin-top: 0;
+  height: 75px;
+  background: none;
+}
+
+#home {
+  ul{
+  list-style: none;
+    li{
+      &:last-child {
+        margin-right: 20px;
+      }
+      &.active a {
+        background: $light-color;
+      }
+      a{
+        float: right;
+        color: $dark-color;
+        text-align: center;
+        margin: 10px 0;
+        padding: 5px 10px;
+        width: 100px;
+        border-radius: 30px;
+        &:hover {
+        background: $light-color;
+        }
+      }
+    }
+  }
+}
+
+#home {
+  height: 1000px;
+  background: #fff;
+}
+
+#services {
+  height: 1000px;
+  background: $secondary-color;
+}
+
+#our-work {
+  height: 1000px;
+  background: #fff;
+}
+
+footer {
+  height: 60px;
+  background: $dark-color;
+  color: $light-color;
+}
+      
