@@ -15,4 +15,4 @@
 //= require foundation
 //= require_tree .
 
-$(function(){ $(document).foundation({magellen: {throttle_delay: 50}}); });
+$(function(){ $(document).foundation(); });
