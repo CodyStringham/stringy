@@ -1,12 +1,10 @@
 Stringy::Application.routes.draw do
 
-  root :to => 'home#index'
+  
 
-  get "/contact", to: "contactemail#new", as: "contact"
-
-  post "/contact", to: "contactemail#create", as: "contact_post"
-
-  get "home/index"
+  root to: 'home#index'
+  get "/contact", to: "contact#index"
+  post "/contact", to: "home#create"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

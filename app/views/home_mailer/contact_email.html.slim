@@ -1,0 +1,10 @@
+html
+  head
+    title= headers[:subject]
+  body
+    h1 New Contact Message!
+    ul
+      li Name: #{@user.name}
+      li Email: #{@user.email}
+      li Subject: #{@user.subject}
+      li Body: #{@user.message}

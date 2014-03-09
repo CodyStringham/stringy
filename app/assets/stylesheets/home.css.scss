@@ -16,7 +16,11 @@ html, body {
 }
 
 .section-heading {
-  padding-top: 140px;
+  margin-top: 140px;
+}
+
+.section-row {
+  padding-top: 90px;
 }
 
 #hero-area {
@@ -26,8 +30,6 @@ html, body {
 
 
 .fixed-nav-bar {
-  margin-top: 0;
-  height: 75px;
   background: none;
 }
 
@@ -70,6 +72,11 @@ html, body {
 #our-work {
   height: 1000px;
   background: #fff;
+}
+
+#contact {
+  height: 1000px;
+  background: $primary-color;
 }
 
 footer {
