@@ -1,11 +1,8 @@
 class HomeMailer < ActionMailer::Base
-  default from: "from@example.com"
 
   def contact_email(user)
     @user = user
-    @greeting = "Hi"
-
-    mail(to: "info@5tringy.com", subject: "Contact Email - 5tringy.com")
+    mail(to: "info@5tringy.com", from:"#{@user.email}", subject: "5tringy - #{@user.subject}")
   end
 
 end

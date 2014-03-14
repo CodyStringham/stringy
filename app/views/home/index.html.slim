@@ -1,13 +1,41 @@
+a.top-jump.fa.fa-angle-up href="#hero-area"
+
+nav.top-bar.mobile-nav data-topbar=""
+  ul.title-area
+    li.name
+      h1
+        a href="#"  5tringy
+    li.toggle-topbar.menu-icon
+      a.mobile-nav-menu href=""
+  section.top-bar-section
+    ul.right.mobile-nav-list
+      li
+        a href="#hero-area"  Home
+      li
+        a href="#services"  Services
+      li
+        a href="#projects"  Projects
+      li
+        a href="#about"  About
+      li
+        a href="#contact"  Contact
+
 #hero-area
   .row
+    .large-8.large-offset-2.medium-10.medium-offset-1.columns
+      a name="hero" data-magellan-destination="hero"
+      =image_tag("logo.svg", alt: "5tringy Creative Logo", class: "logo")
     .large-12.columns
-      a name="hero"
-      h3 data-magellan-destination="hero" Hero Area
+      h3.hero-header
+        | Web Design
+        i.fa.fa-plus
+        | Development
 
 #home.content-container
-  div#fixed-nav.fixed-nav-bar data-magellan-expedition="fixed" 
+  div#fixed-nav.fixed-nav-bar data-magellan-expedition="fixed"
+    =image_tag("logo_b.svg", alt: "5tringy Creative Logo")
     ul.sub-nav.right
-      li.hero-item data-magellan-arrival="hero" 
+      li.hero-item.active data-magellan-arrival="hero" 
         a href="#hero-area"  Home
       li.services-item data-magellan-arrival="services" 
         a href="#services"  Services
@@ -25,23 +53,36 @@
 #services.content-container
   span data-magellan-destination="services" 
   a.magellan-link name="services"
-  .row.section-row
+  .row.section-row.light
     .large-12.columns
-      h3 Services
+      h3.light.section-heading Services
+    .large-6.columns
+      p Logo
+      p Branding
+      p Advertisements
+      p Or...
+    .large-6.columns
+      p Static sites
+      p Responsive sites
+      p Rails apps
+      p SEO
+    .large-12.columns
+      hr
+      p Blurb about how 5tringy Creative combines the best of design and development to deliver a truly exceptional product to all of our customers.
       
 #projects.content-container
   span data-magellan-destination="projects"
   a.magellan-link name="projects"
   .row.section-row
     .large-12.columns
-      h3  Projects
+      h3.light  Projects
       
 #about.content-container
   span data-magellan-destination="about"
   a.magellan-link name="about"
   .row.section-row
     .large-12.columns
-      h3  Cody Stringham
+      h3.light  Cody Stringham
 
 #contact.content-container
   span data-magellan-destination="contact"
@@ -50,6 +91,8 @@
     .large-12.columns
       h3 Want to talk?
       p send me a message here:
+      i.fa.fa-comments.contact-icon
+
 
   .row#contact-form-row
       = simple_form_for @contact_email, url: contact_path do |f|
@@ -87,4 +130,6 @@
 footer
   .row
     .large-12.columns
-      p Footer Copyrights and stuffs.
+      p Copyright &COPY; #{Time.now.year}, 5tringy Creative
+
+

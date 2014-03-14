@@ -10,6 +10,14 @@
 
 }
 
+@font-face {
+    font-family: 'NexaSlab';
+    src: url(font-path('NexaSlab.eot') + "?#iefix") format('embedded-opentype'),
+         url(font-path('NexaSlab.woff')) format('woff'), 
+         url(font-path('NexaSlab.ttf'))  format('truetype'),
+         url(font-path('NexaSlab.svg') + "#NexaSlab") format('svg');
+}
+
 // * * * * * * * * * * * * * * * * * * * * * * * * BASE STYLES
 
 html, body {
@@ -18,11 +26,48 @@ html, body {
 }
 
 .section-row {
-  padding-top: 140px;
+  padding-top: 200px;
+  @media screen and (max-width: 641px) {
+    padding-top: 60px;
+  }
+}
+
+.section-heading {
+  margin-bottom: 40px;
+}
+
+.light {
+  color: #fff;
 }
 
 .content-container {
-  padding-bottom: 140px;
+  padding-bottom: 200px;
+  @media screen and (max-width: 641px) {
+    padding-bottom: 60px;
+  }
+}
+
+.mobile-nav {
+  display: none;
+  @media screen and (max-width: 641px) {
+    display: block;
+  }
+}
+
+.top-jump {
+  padding: 4px 10px 6px;
+  opacity: 0.8;
+  font-size: 2em;
+  font-weight: bold;
+  display: none;
+  right: 0;
+  bottom: 80px;
+  position: fixed;
+  z-index: 100;
+  background: darken($dark-color,10%);
+  @media screen and (max-width: 641px) {
+    display: none;
+  }
 }
 
 //stops magellan travel earlier
@@ -33,7 +78,15 @@ a.magellan-link {
 
 #fixed-nav {
   background: #fff;
+  display: none;
   height: 55px;
+  @media screen and (max-width: 641px) {
+    display: none;
+  }
+  img{
+    height: 35px;
+    margin-left: 20px;
+  }
   ul{
     list-style: none;
     li{
@@ -52,6 +105,9 @@ a.magellan-link {
         padding: 5px 10px;
         width: 100px;
         border-radius: 30px;
+        @media screen and (max-width: 780px) {
+          width: 75px;
+        }
         &:hover {
           color: $dark-color !important;
           background: $light-color !important;
@@ -64,8 +120,30 @@ a.magellan-link {
 // * * * * * * * * * * * * * * * * * * * * * * * * HERO
 
 #hero-area {
-  background: $primary-color;
-  height: 500px;
+  background: url("bg.png");
+}
+
+.logo {
+  margin-top: 100px;
+}
+
+.hero-header {
+  font-family: "nimbus-sans", "Helvetica", Helvetica, Arial, sans-serif;
+  margin: 60px 0 100px;
+  padding-top: 60px;
+  border-top: 1px solid darken($primary-color, 10%);
+  text-align: center;
+  color: darken($primary-color, 10%);
+  font-size: 1.5em;
+  @media screen and (max-width: 641px) {
+    font-size: 1.25em;
+  }
+  i {
+    position: relative;
+    top: 10px;
+    padding: 0 10px;
+    font-size: 2em;
+  }
 }
 
 // * * * * * * * * * * * * * * * * * * * * * * * * HOME
@@ -102,8 +180,30 @@ a.magellan-link {
 
 #contact {
   background: $light-color;
+  position: relative;
+  min-height: 800px;
+  h3, p {
+    position: relative;
+    z-index: 10;
+  }
 }
+
+.contact-icon {
+  font-size: 20em;
+  color: lighten($light-color, 5%);
+  position: absolute;
+  top: -60px;
+  right: 50px;
+  z-index: 0;
+  @media screen and (max-width: 400px) {
+    right: 30px;
+    font-size: 15em;
+  }
+}
+
 #contact-form-row {
+  position: relative;
+  z-index: 10;
   .contact-label {
     margin-bottom: 0;
     padding-bottom: 0;
@@ -122,7 +222,7 @@ a.magellan-link {
 
 textarea {
   height: auto;
-  height: 100px;
+  height: 180px;
   background: -webkit-linear-gradient(left, rgba(255,255,255,0) 15px, transparent 15px), -webkit-linear-gradient(right, rgba(255,255,255,0) 15px, transparent 15px), -webkit-linear-gradient(rgba(255,255,255,0) 30px, $dark-color 30px, $dark-color 31px, rgba(255,255,255,0) 31px);
   background: -moz-linear-gradient(left, rgba(255,255,255,0) 15px, transparent 15px), -moz-linear-gradient(right, rgba(255,255,255,0) 15px, transparent 15px), -moz-linear-gradient(rgba(255,255,255,0) 30px, $dark-color 30px, $dark-color 31px, rgba(255,255,255,0) 31px);
   background: -ms-linear-gradient(left, rgba(255,255,255,0) 15px, transparent 15px), -ms-linear-gradient(right, rgba(255,255,255,0) 15px, transparent 15px), -ms-linear-gradient(rgba(255,255,255,0) 30px, $dark-color 30px, $dark-color 31px, rgba(255,255,255,0) 31px);
@@ -160,8 +260,10 @@ textarea {
 // * * * * * * * * * * * * * * * * * * * * * * * * FOOTER
 
 footer {
-  height: 60px;
+  height: 80px;
+  padding-top: 20px;
+  text-align: center;
   background: $dark-color;
-  color: $light-color;
+  color: lighten($dark-color, 20%);
 }
       
