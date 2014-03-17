@@ -10,8 +10,7 @@ $ ->
   mobNav = $('.mobile-nav')
 
   checkWidth = () ->
-    w = $(window).width()
-    if w > 641 && window.pageYOffset > 550
+    if $(window).width() > 641 && window.pageYOffset > 550
       fixNav.fadeIn()
     else
       fixNav.fadeOut()
