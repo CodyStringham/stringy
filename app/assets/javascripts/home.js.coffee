@@ -9,27 +9,60 @@ $ ->
   mobList = $('.mobile-nav-list')
   mobNav = $('.mobile-nav')
 
-  checkWidth = () ->
-    if $(window).width() > 641 && window.pageYOffset > 550
+  wideScreen = false
+  screenOffset = false
+
+  getWidth = ->
+    pageWidth = $(window).width()
+
+  getOffset = ->
+    pageOffset = window.pageYOffset
+
+  checkScrollTop = (offset) ->
+    if offset > 550 && screenOffset == false
+      screenOffset = true
+      topJump.fadeIn()
+
+    if offset < 550 && screenOffset == true
+      screenOffset = false
+      topJump.fadeOut()
+
+  checkWideScreen = (width) ->
+    if width > 641 && wideScreen == false
+      wideScreen = true
+
+    if width < 641 && wideScreen == true
+      wideScreen = false  
+
+    if wideScreen == true && screenOffset == true
       fixNav.fadeIn()
     else
       fixNav.fadeOut()
 
-  checkWidth()
+ 
+  timer = undefined
+  $(window).scroll ->
+    window.clearTimeout timer if timer
+    timer = window.setTimeout(->
+      
+      # actual callback
+      checkScrollTop(getOffset())
+      checkWideScreen(getWidth())
+      mobNav.removeClass("expanded")
+      
+    , 25)
+    return
 
-  checkScroll = (ev) ->
-    if window.pageYOffset > 550
-      topJump.fadeIn()
-    else
-      topJump.fadeOut()
-
-  window.onresize =  ->
-    checkWidth()
-
-  window.onscroll = ->
-    checkScroll()
-    checkWidth()
-    mobNav.removeClass("expanded")
+  $(window).resize ->
+    window.clearTimeout timer if timer
+    timer = window.setTimeout(->
+      
+      # actual callback
+      checkWideScreen(getWidth())
+      
+    , 100)
+    return
+    
 
   slideScroll = (element, navheight) ->
     root = $("body,html")
