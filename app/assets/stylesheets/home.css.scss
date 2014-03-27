@@ -3,10 +3,10 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 * {
-  transition: background .3s ease, color .3s ease, box-shadow .3s ease;
-  -webkit-transition: background .3s ease, color .3s ease, -webkit-box-shadow .3s ease;
-  -moz-transition: background .3s ease, color .3s ease, -moz-box-shadow .3s ease;
-  -o-transition: background .3s ease, color .3s ease, -o-box-shadow .3s ease;
+  transition: background .3s ease, color .3s ease, box-shadow .3s ease, transform 1s ease;
+  -webkit-transition: background .3s ease, color .3s ease, -webkit-box-shadow .3s ease, -webkit-transform 1s ease;
+  -moz-transition: background .3s ease, color .3s ease, -moz-box-shadow .3s ease, -moz-transform 1s ease;
+  -o-transition: background .3s ease, color .3s ease, -o-box-shadow .3s ease, -o-transform 1s ease;
 
 }
 
@@ -26,14 +26,21 @@ html, body {
 }
 
 .section-row {
-  padding-top: 200px;
+  padding-top: 120px;
   @media screen and (max-width: 641px) {
     padding-top: 60px;
   }
 }
 
-.section-heading {
-  margin-bottom: 40px;
+.page-head {
+  font-size: 3em;
+  @media screen and (max-width: 641px) {
+    font-size: 2em;
+  }
+}
+
+.subhead {
+  font-family: Helvetica;
 }
 
 .light {
@@ -41,7 +48,7 @@ html, body {
 }
 
 .content-container {
-  padding-bottom: 200px;
+  padding-bottom: 120px;
   @media screen and (max-width: 641px) {
     padding-bottom: 60px;
   }
@@ -56,15 +63,19 @@ html, body {
 
 .top-jump {
   padding: 4px 10px 6px;
-  opacity: 0.8;
+  color: $light-color;
   font-size: 2em;
   font-weight: bold;
   display: none;
-  right: 0;
-  bottom: 80px;
+  right: 10px;
+  bottom: 10px;
   position: fixed;
   z-index: 100;
-  background: darken($dark-color,10%);
+  background: lighten($dark-color, 10%);
+  &:hover {
+    color: #fff;
+    background: lighten($dark-color, 15%)
+  }
   @media screen and (max-width: 641px) {
     display: none;
   }
@@ -117,10 +128,33 @@ a.magellan-link {
   }
 }
 
+.area-foot {
+  position: absolute;
+  bottom: 0;
+  height: 60px;
+  width: 100%;
+  @media screen and (max-width: 641px) {
+    height: 30px;
+  }
+  &.geo-white {
+    background: url('footer_w.svg') center bottom repeat-x;
+    background-size: cover;
+  }
+  &.bubs {
+    background: url('footer_bubs.svg') center bottom repeat-x;
+    background-size: cover;
+  }
+  &.geo-dark {
+    background: url('footer_d.svg') center bottom repeat-x;    
+    background-size: cover;
+  }
+}
+
 // * * * * * * * * * * * * * * * * * * * * * * * * HERO
 
 #hero-area {
   background: url("bg.png");
+  position: relative;
 }
 
 .logo {
@@ -140,40 +174,158 @@ a.magellan-link {
   }
   i {
     position: relative;
-    top: 10px;
+    top: 11px;
     padding: 0 10px;
     font-size: 2em;
   }
 }
 
+
+
 // * * * * * * * * * * * * * * * * * * * * * * * * HOME
 
 
 #home {
-  height: 1000px;
+  position: relative;
   background: #fff;
+  .page-head-hidden {
+    height: 5px;
+    text-indent: -9999px;
+  }
+  h3,h4 {
+    text-align: center;
+  }
+  .home-trifecta {
+    margin-top: 100px;
+    text-align: center;
+    @media screen and (max-width: 641px) {
+      margin-top: 20px;
+    }
+    p {
+      margin-bottom: 60px;
+      padding-top: 10px;
+      border-top: 2px dotted $light-color;
+    }
+    span {
+      margin: 20px 0;
+      background: $secondary-color;
+      color: #fff;
+      border-radius: 100%;
+      &.fresh {
+        padding: .65em .65em;
+        font-size: 3.5em;
+      }
+      &.agile {
+        margin-top: 40px;
+        font-size: 5em;
+        padding: .65em .91em;
+        @media screen and (max-width: 641px) {
+          font-size: 3.5em;
+          margin-top: 20px;
+        }
+      }
+      &.shield {
+        font-size: 2em;
+        padding: .72em .88em;
+        margin-top: 30;
+        @media screen and (max-width: 641px) {
+          font-size: 3.5em;
+          margin-top: 20px;
+        }
+      }
+    }
+  }
 }
 
 // * * * * * * * * * * * * * * * * * * * * * * * * SERVICES
 
 
 #services {
-  height: 1000px;
+  position: relative;
   background: $secondary-color;
+  h3, h4 {
+    text-align: center;
+  }
+  .service-section {
+    margin-top: 120px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid lighten($secondary-color, 15%);
+  }
+  .service-sub {
+    border-radius: 30px;
+    position: relative;
+    margin: 60px 0;
+    h4 {
+      padding-top: 15px;
+      margin-bottom: 0;
+    }
+    span {
+      font-size: 6em;
+      position: absolute;
+      &.logodes {
+        font-size: 5em;
+      }
+      &.brand {
+        font-size: 5em;
+      }
+      &.adver {
+        font-size: 5em;
+      }
+      &.more {
+        font-size: 5em;
+      }
+      &.static {
+        font-size: 5em;
+      }
+      &.respo {
+        font-size: 5em;
+      }
+      &.apps {
+        font-size: 5em;
+      }
+      &.search {
+        font-size: 5em;
+      }
+    }
+    &.desc-right {
+      text-align: right;
+      padding-right: 120px;
+      h4 {
+        text-align: right;
+      }
+      span {
+        right: 0px;
+        top: 0px;
+      }
+    }
+    &.desc-left {
+      text-align: left;
+      padding-left: 120px;
+      h4 {
+        text-align: left;
+      }
+      span {
+        left: 0px;
+        top: 0px;
+      }
+    }
+  }
 }
 
 // * * * * * * * * * * * * * * * * * * * * * * * * PROJECTS
 
 #projects {
   height: 1000px;
-  background: $dark-color;
+  position: relative;
+  background: #fff;
 }
 
 // * * * * * * * * * * * * * * * * * * * * * * * * ABOUT
 
 #about {
   height: 1000px;
-  background: $primary-color;
+  position: relative;
+  background: $dark-color;
 }
 
 // * * * * * * * * * * * * * * * * * * * * * * * * CONTACT

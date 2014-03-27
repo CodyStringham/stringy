@@ -30,6 +30,7 @@ nav.top-bar.mobile-nav data-topbar=""
         | Web Design
         i.fa.fa-plus
         | Development
+  .area-foot.geo-white
 
 #home.content-container
   div#fixed-nav.fixed-nav-bar data-magellan-expedition="fixed"
@@ -46,51 +47,94 @@ nav.top-bar.mobile-nav data-topbar=""
       li.contact-item data-magellan-arrival="contact" 
         a href="#contact"  Contact
 
-  .row
+  .row.section-row
     .large-12.columns
-      h3 5tringy Creative
+      h1.page-head-hidden 5tringy Creative, Salk Lake design. Web Design, SEO, Graphic Design.
+      h3.page-head Rise above all the rest
+      h4.subhead We focus on making you stand out in the best way possible. Don't be ashamed of your website anymore, we'll make you one so good your competition will be scrambling!
+      .row.home-trifecta    
+        .medium-4.columns.trifecta-cols
+          span.fa.fa-leaf.fresh
+          h4 Fresh
+          p This is where there is a short blurb about each point. I want these to be a slider type deal when its a large screen. But then when it goes small I want each explanation under each icon. Do you think I can make that work tonight?
+        .medium-4.columns.trifecta-cols
+          span.fa.fa-flash.agile
+          h4 Agile
+          p This is where there is a short blurb about each point. I want these to be a slider type deal when its a large screen. But then when it goes small I want each explanation under each icon. Do you think I can make that work tonight?
+        .medium-4.columns.trifecta-cols
+          span.fa.fa-shield.shield
+          h4 Stable
+          p This is where there is a short blurb about each point. I want these to be a slider type deal when its a large screen. But then when it goes small I want each explanation under each icon. Do you think I can make that work tonight?
+
+  .area-foot.bubs
+
 
 #services.content-container
   span data-magellan-destination="services" 
   a.magellan-link name="services"
   .row.section-row.light
     .large-12.columns
-      h3.light.section-heading Services
-    .large-6.columns
-      p Logo
-      p Branding
-      p Advertisements
-      p Or...
-    .large-6.columns
-      p Static sites
-      p Responsive sites
-      p Rails apps
-      p SEO
+      h3.page-head.light Get back up to speed
+      h4.subhead.light It's time to get serious about your visual identity, in todays market quality establishes trust. We're here to help your customers build more confidence in your brand.
+    .medium-6.medium-offset-3.columns
+      h3.service-section.light Graphic Design
+    .large-12.columns
+      .service-sub.desc-left
+          span.light.fa.fa-circle-o.logodes
+          h4.subhead.light Logo Design
+      .service-sub.desc-right
+          span.light.fa.fa-puzzle-piece.brand
+          h4.subhead.light Branding
+      .service-sub.desc-left
+          span.light.fa.fa-bullhorn.adver
+          h4.subhead.light Advertisements
+      .service-sub.desc-right
+          span.light.fa.fa-asterisk.more
+          h4.subhead.light And much more&hellip;
+
+    .medium-6.medium-offset-3.columns
+      h3.service-section.light Web Development
+    .large-12.columns
+      .service-sub.desc-left
+          span.light.fa.fa-laptop.static
+          h4.subhead.light Static Sites
+      .service-sub.desc-right
+          span.light.fa.fa-mobile.respo
+          h4.subhead.light Responsive Sites
+      .service-sub.desc-left
+          span.light.fa.fa-magic.apps
+          h4.subhead.light Web Apps
+      .service-sub.desc-right
+          span.light.fa.fa-search.search
+          h4.subhead.light On-Page SEO
     .large-12.columns
       hr
       p Blurb about how 5tringy Creative combines the best of design and development to deliver a truly exceptional product to all of our customers.
+
       
 #projects.content-container
   span data-magellan-destination="projects"
   a.magellan-link name="projects"
   .row.section-row
     .large-12.columns
-      h3.light  Projects
+      h3  Projects
+
       
 #about.content-container
   span data-magellan-destination="about"
   a.magellan-link name="about"
   .row.section-row
     .large-12.columns
-      h3.light  Cody Stringham
+      h3.light About Me
+
 
 #contact.content-container
   span data-magellan-destination="contact"
   a.magellan-link name="contact"
   .row.section-row
     .large-12.columns
-      h3 Want to talk?
-      p send me a message here:
+      h3 Ready to start talking?
+      p send me a message here, I'll get back to you as soon as I can
       i.fa.fa-comments.contact-icon
 
 
@@ -125,6 +169,8 @@ nav.top-bar.mobile-nav data-topbar=""
         .row
           .large-2.large-offset-5.medium-4.medium-offset-4.small-6.small-offset-3.columns         
             = f.submit "Send Email", class:"button round expand secondary"
+  
+  .area-foot.geo-dark
 
 
 footer
