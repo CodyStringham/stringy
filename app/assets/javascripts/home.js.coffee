@@ -20,11 +20,17 @@ $ ->
   checkScrollTop = (offset) ->
     if offset > 550 && screenOffset == false
       screenOffset = true
-      topJump.fadeIn()
+      topJump.addClass("top-jump-active")
+      topJump.animate
+        opacity: 1
+      , 1000
 
     if offset < 550 && screenOffset == true
       screenOffset = false
-      topJump.fadeOut()
+      topJump.removeClass("top-jump-active")
+      topJump.animate
+        opacity: 0
+      , 500
 
   # Function that checks the window width for the navigation displayed
   checkWideScreen = (width) ->
@@ -87,7 +93,7 @@ $ ->
   mobList.on "click", "a", ->
     mobNav.removeClass("expanded")
     scrollMaster( $(this), 0 )
-    
+
 
 
 
@@ -234,3 +240,7 @@ $ ->
   ) jQuery, window
 
   $("#serv-slide").catslider()
+
+
+
+

@@ -1,4 +1,4 @@
-a.top-jump.fa.fa-angle-up href="#hero-area"
+a.top-jump.fa.fa-arrow-up href="#home"
 
 nav.top-bar.mobile-nav data-topbar=""
   ul.title-area
@@ -10,7 +10,7 @@ nav.top-bar.mobile-nav data-topbar=""
   section.top-bar-section
     ul.right.mobile-nav-list
       li
-        a href="#hero-area"  Home
+        a href="#home"  Home
       li
         a href="#services"  Services
       li
@@ -20,24 +20,25 @@ nav.top-bar.mobile-nav data-topbar=""
       li
         a href="#contact"  Contact
 
-#hero-area
+#home
   .row
     .large-8.large-offset-2.medium-10.medium-offset-1.columns
-      a name="hero" data-magellan-destination="hero"
+      a name="home" data-magellan-destination="home"
       =image_tag("logo.svg", alt: "5tringy Creative Logo", class: "logo")
     .large-12.columns
-      h3.hero-header
+      h3.home-header
         | Web Design
         i.fa.fa-plus
         | Development
   .area-foot.geo-white
 
-#home.content-container
+
+#intro.content-container
   div#fixed-nav.fixed-nav-bar data-magellan-expedition="fixed"
     =image_tag("logo_b.svg", alt: "5tringy Creative Logo")
     ul.sub-nav.right
-      li.hero-item.active data-magellan-arrival="hero" 
-        a href="#hero-area"  Home
+      li.home-item.active data-magellan-arrival="home" 
+        a href="#home"  Home
       li.services-item data-magellan-arrival="services" 
         a href="#services"  Services
       li.project-item data-magellan-arrival="projects" 
@@ -76,93 +77,58 @@ nav.top-bar.mobile-nav data-topbar=""
     .large-12.columns
       h3.page-head.light Get back up to speed
       h4.subhead.light It's time to get serious about your visual identity, in today's market quality establishes trust. We're here to help your customers build more confidence in your brand.
-  #serv-slide.serv-slide
-    ul
-      li
-        .slide-item
-          =image_tag("logo_5_w.svg", alt: "5tringy Creative Logo")
-          h4 Print
-      li
-        .slide-item
-          =image_tag("logo_5_w.svg", alt: "5tringy Creative Logo")
-          h4 Web
-      li
-        .slide-item
-          =image_tag("logo_5_w.svg", alt: "5tringy Creative Logo")
-          h4 Ads
-    ul
-      li
-        .slide-item
-          =image_tag("logo_5_w.svg", alt: "5tringy Creative Logo")
-          h4 Logos
-      li
-        .slide-item
-          =image_tag("logo_5_w.svg", alt: "5tringy Creative Logo")
-          h4 Identity
-      li
-        .slide-item
-          =image_tag("logo_5_w.svg", alt: "5tringy Creative Logo")
-          h4 Standards
-    ul
-      li
-        .slide-item
-          =image_tag("logo_5_w.svg", alt: "5tringy Creative Logo")
-          h4 Static
-      li
-        .slide-item
-          =image_tag("logo_5_w.svg", alt: "5tringy Creative Logo")
-          h4 Responsive
-      li
-        .slide-item
-          =image_tag("logo_5_w.svg", alt: "5tringy Creative Logo")
-          h4 SEO
-    ul
-      li
-        .slide-item
-          =image_tag("logo_5_w.svg", alt: "5tringy Creative Logo")
-          h4 Dynamic
-      li
-        .slide-item
-          =image_tag("logo_5_w.svg", alt: "5tringy Creative Logo")
-          h4 Functional
-      li
-        .slide-item
-          =image_tag("logo_5_w.svg", alt: "5tringy Creative Logo")
-          h4 Manageable
-    .row
-      .large-12.columns     
-        nav
-          a href="#"  Graphics
-          a href="#"  Branding
-          a href="#"  Websites
-          a href="#"  Web Apps
+  
+  =render 'slide'
 
+  .area-foot.angle
         
+
 #projects.content-container
   span data-magellan-destination="projects"
   a.magellan-link name="projects"
   .row.section-row
     .large-12.columns
-      h3  Projects
+      h3.page-head Our latest projects
+      h4.subhead 
+        | Here is some of our best pudding, we're certain you will find 
+        em "the proof"
+        |  inside.
 
-      
+  =render "grid"
+
+  .area-foot.angle-bottom
+
+
 #about.content-container
   span data-magellan-destination="about"
   a.magellan-link name="about"
   .row.section-row
     .large-12.columns
-      h3.light About Me
+      h3.page-head.light Hello, my name is Cody
+      h4.subhead.light 43% graphic designer, 21% web developer, 100% creative mastermind.
+    .large-12.columns
+      .row.cs-info.light
+        .medium-4.columns
+          p.text-left I am the founder, designer, and developer here at 5tringy Creative.
+        .medium-4.small-8.columns
+          =image_tag('cody.jpg', alt: "Cody Stringham", class: "cs-img")
+          h4.cs-img-caption.light.text-center 
+            | me 
+            span.fa.fa-arrow-up
+        .medium-4.columns
+          p.text-right Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
+
+  .area-foot.angle
 
 
-#contact.content-container
+#contact
   span data-magellan-destination="contact"
   a.magellan-link name="contact"
   .row.section-row
     .large-12.columns
-      h3 Ready to start talking?
-      p send me a message here, I'll get back to you as soon as I can
+      h3.page-head Ready to start talking?
+      h4.subhead Send me a message here, I'll get back to you as soon as I can
       i.fa.fa-comments.contact-icon
-
 
   .row#contact-form-row
       = simple_form_for @contact_email, url: contact_path do |f|
@@ -182,7 +148,7 @@ nav.top-bar.mobile-nav data-topbar=""
 
         .large-4.columns
           .row
-            .large-3.columns.subject-label
+            .large-3.columns
               = f.label :subject, class:"left inline contact-label"
             .large-9.medium-6.left.columns.inline-input
               = f.input :subject, label:false
@@ -192,9 +158,9 @@ nav.top-bar.mobile-nav data-topbar=""
         .large-12.columns
           = f.input :message, label:false
 
-        .row
-          .large-2.large-offset-5.medium-4.medium-offset-4.small-6.small-offset-3.columns         
-            = f.submit "Send Email", class:"button round expand secondary"
+          .row
+            .large-2.large-offset-5.medium-4.medium-offset-4.small-6.small-offset-3.columns         
+              = f.submit "Send Email", class:"button round expand secondary"
   
   .area-foot.geo-dark
 
@@ -202,6 +168,13 @@ nav.top-bar.mobile-nav data-topbar=""
 footer
   .row
     .large-12.columns
+      a href="#"
+        i.fa.fa-facebook-square
+      a href="#"
+        i.fa.fa-twitter-square
+      a href="#"
+        i.fa.fa-linkedin-square
       p Copyright &COPY; #{Time.now.year}, 5tringy Creative
+
 
 

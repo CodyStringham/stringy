@@ -1,6 +1,20 @@
-.row
-  .large-12.columns
-    h1 Your message has been sent!
-    p Thank you for your interest in 5tringy Creative, we will contact you shortly.
+#contact
+  .row.section-row
+    .large-12.columns
+      h3.page-head Your message has been sent!
+      h4.subhead Thank you for contacting 5tringy Creative, we will get back to you shortly.
+  .row.section-row
+    .large-2.large-offset-5.medium-4.medium-offset-4.small-6.small-offset-3.columns         
+      =link_to "Go Back", root_path, class:"button round expand secondary"
+  .area-foot.geo-dark
 
-    =link_to "Home", root_path, class:"button"
+footer
+  .row
+    .large-12.columns
+      a href="#"
+        i.fa.fa-facebook-square
+      a href="#"
+        i.fa.fa-twitter-square
+      a href="#"
+        i.fa.fa-linkedin-square
+      p Copyright &COPY; #{Time.now.year}, 5tringy Creative

@@ -32,6 +32,10 @@ html, body {
   }
 }
 
+.page-head, .subhead {
+  text-align: center;
+}
+
 .page-head {
   font-size: 3em;
   @media screen and (max-width: 641px) {
@@ -62,16 +66,24 @@ html, body {
 }
 
 .top-jump {
-  padding: 4px 10px 6px;
+  padding: 10px 9px 10px 11px;
   color: $light-color;
+  border-radius: 100%;
   font-size: 2em;
   font-weight: bold;
-  display: none;
+  position: relative;
   right: 10px;
   bottom: 10px;
   position: fixed;
   z-index: 100;
   background: lighten($dark-color, 10%);
+  opacity: 0;
+  -webkit-animation: moveToRight 350ms ease-in-out both;
+  animation: moveToRight 350ms ease-in-out both;
+  &.top-jump-active {
+    -webkit-animation: moveFromRight 350ms ease-in-out both;
+    animation: moveFromRight 350ms ease-in-out both;
+  }
   &:hover {
     color: #fff;
     background: lighten($dark-color, 15%)
@@ -137,11 +149,19 @@ a.magellan-link {
     height: 30px;
   }
   &.geo-white {
-    background: url('footer_w.svg') center bottom repeat-x;
+    background: url('footer_g.svg') center bottom repeat-x;
     background-size: cover;
   }
   &.bubs {
     background: url('footer_bubs.svg') center bottom repeat-x;
+    background-size: cover;
+  }
+  &.angle {
+    background: url('footer_angle.svg') center bottom repeat-x;    
+    background-size: cover;
+  }
+  &.angle-bottom {
+    background: url('footer_angle_bottom.svg') center bottom repeat-x;    
     background-size: cover;
   }
   &.geo-dark {
@@ -150,9 +170,9 @@ a.magellan-link {
   }
 }
 
-// * * * * * * * * * * * * * * * * * * * * * * * * HERO
+// * * * * * * * * * * * * * * * * * * * * * * * * HOME
 
-#hero-area {
+#home {
   background: url("bg.png");
   position: relative;
 }
@@ -161,7 +181,7 @@ a.magellan-link {
   margin-top: 100px;
 }
 
-.hero-header {
+.home-header {
   font-family: "nimbus-sans", "Helvetica", Helvetica, Arial, sans-serif;
   margin: 60px 0 100px;
   padding-top: 60px;
@@ -182,18 +202,15 @@ a.magellan-link {
 
 
 
-// * * * * * * * * * * * * * * * * * * * * * * * * HOME
+// * * * * * * * * * * * * * * * * * * * * * * * * INTRO
 
 
-#home {
+#intro {
   position: relative;
-  background: #fff;
+  background: $light-color;
   .page-head-hidden {
     height: 5px;
     text-indent: -9999px;
-  }
-  h3,h4 {
-    text-align: center;
   }
   .home-trifecta {
     margin-top: 100px;
@@ -202,6 +219,7 @@ a.magellan-link {
       margin-top: 20px;
     }
     p {
+      color: darken($light-color, 30%);
       margin-bottom: 60px;
       padding-top: 10px;
       border-top: 2px dotted $light-color;
@@ -243,9 +261,7 @@ a.magellan-link {
 #services {
   position: relative;
   background: $secondary-color;
-  h3, h4 {
-    text-align: center;
-  }
+  border-bottom: 10px solid $light-color;
   .service-section {
     margin-top: 120px;
     padding-bottom: 15px;
@@ -289,9 +305,8 @@ a.magellan-link {
 }
 
 
+// | | | | | | | | | SLIDER
 
-
-// * * * * SLIDER
 
 .serv-slide {
   position: relative;
@@ -309,6 +324,9 @@ a.magellan-link {
   overflow: hidden;
   text-align: center;
   pointer-events: none;
+  span {
+    display: none;
+  }
 }
 
 .no-js .serv-slide ul {
@@ -331,8 +349,6 @@ a.magellan-link {
   max-width: 300px;
   -webkit-transform: translateX(600%);
   transform: translateX(600%);
-  -webkit-transition: opacity 0.2s linear;
-  transition: opacity 0.2s linear;
 }
 
 .no-js .serv-slide ul li {
@@ -350,13 +366,12 @@ a.magellan-link {
   border: none;
 }
 
-.serv-slide ul li h4 {
+.serv-slide ul li span {
   display: inline-block;
   font-family: Helvetica;
-  color: lighten($secondary-color, 20%);
-  font-style: italic;
-  font-weight: 400;
-  font-size: 18px;
+  color: lighten($secondary-color, 30%);
+  font-weight: 100;
+  font-size: 1em;
   padding: 20px 10px 0;
 }
 
@@ -376,7 +391,6 @@ a.magellan-link {
 .serv-slide nav a {
   display: inline-block;
   font-family: "NexaSlab";
-  text-transform: uppercase;
   padding: 30px 30px 30px 34px;
   position: relative;
   color: lighten($secondary-color, 30%);
@@ -592,6 +606,7 @@ a.magellan-link {
   .serv-slide {
     text-align: center;
     height: auto;
+    margin-top: 20px; 
   }
 
   .serv-slide ul {
@@ -600,6 +615,22 @@ a.magellan-link {
     display: inline;
     bottom: auto;
     pointer-events: auto;
+    &:before {
+      display: block;
+      position: relative;
+      bottom: -40px;
+      content: attr(data-listname);
+      font-family: "NexaSlab";
+      color: $light-color;
+      font-size: 1.5em;
+      margin-top: 60px;
+    }
+    span {
+      font-family: "NexaSlab";
+      font-size: 1.5em;
+      margin-top: 60px;
+      display: block;
+    }
   }
 
   .serv-slide ul li {
@@ -607,8 +638,19 @@ a.magellan-link {
     animation: none !important;
     -webkit-transform: translateX(0) !important;
     transform: translateX(0) !important;
-    padding: 10px 3px;
-    width: 50%;
+    padding: 5px;
+    width: 100%;
+    border-bottom: 1px solid lighten($secondary-color, 15%);
+    text-align: left;
+    img {
+      position: relative;
+      bottom: 7px;
+      width: 60px;
+      display: inline;
+    }
+    h4 {
+      display: inline;
+    }
   }
 
   .serv-slide nav {
@@ -619,17 +661,219 @@ a.magellan-link {
 // * * * * * * * * * * * * * * * * * * * * * * * * PROJECTS
 
 #projects {
-  height: 1000px;
   position: relative;
-  background: #fff;
+  background: $light-color;
+  padding-bottom: 200px;
+}
+
+
+// | | | | | | | expand grid
+
+.main > p {
+  text-align: center;
+  padding: 50px 20px;
+}
+
+.grid-grid {
+  list-style: none;
+  padding: 20px 0;
+  margin: 0 auto;
+  text-align: center;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.grid-grid li {
+  display: inline-block;
+  margin: 10px 5px 0 5px;
+  vertical-align: top;
+  height: 250px;
+}
+
+.grid-grid li a img {
+  max-width: 250px;
+}
+
+.grid-grid li > a,
+.grid-grid li > a img {
+  border: none;
+  outline: none;
+  display: block;
+  position: relative;
+}
+
+.grid-grid li.grid-expanded > a::after {
+  top: auto;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+  border-bottom-color: $dark-color;
+  border-width: 15px;
+  left: 50%;
+  margin: -20px 0 0 -15px;
+}
+
+.grid-expander {
+  position: absolute;
+  background: $dark-color;
+  top: auto;
+  left: 0;
+  width: 100%;
+  margin-top: 10px;
+  text-align: left;
+  height: 0;
+  overflow: hidden;
+}
+
+.grid-expander-inner {
+  padding: 50px 30px;
+  height: 100%;
+}
+
+.expand-close {
+  position: absolute;
+  background: $dark-color;
+  font-size: 2.5em;
+  color: lighten($dark-color, 30%);
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=.5);
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.expand-close:hover::before,
+.expand-close:hover::after {
+  color: lighten($dark-color, 15%);
+}
+
+.grid-fullimg,
+.grid-details {
+  width: 50%;
+  float: left;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.grid-details {
+  padding: 0 40px 0 20px;
+}
+
+.grid-fullimg {
+  text-align: center;
+}
+
+.grid-fullimg img {
+  display: inline-block;
+  max-height: 100%;
+  max-width: 100%;
+}
+
+.grid-details h3 {
+  color: $light-color;
+  font-weight: 300;
+  font-size: 2.5em;
+  padding: 40px 0 10px;
+  margin-bottom: 10px;
+}
+
+.grid-details p {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+  color: lighten($dark-color, 30%);
+}
+
+.grid-details a {
+  font-size: 1rem;
+  border-radius: 30px;
+  background: lighten($dark-color, 30%);
+  color: $dark-color;
+  padding: 10px 30px;
+  display: inline-block;
+  margin: 30px 0 0;
+  outline: none;
+}
+
+.grid-details a:hover {
+  background: lighten($dark-color, 20%);
+}
+
+.grid-loading {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #ddd;
+  box-shadow: 0 0 1px #ccc, 15px 30px 1px #ccc, -15px 30px 1px #ccc;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -25px 0 0 -25px;
+  -webkit-animation: loader 0.5s infinite ease-in-out both;
+  -moz-animation: loader 0.5s infinite ease-in-out both;
+  animation: loader 0.5s infinite ease-in-out both;
+}
+
+@-webkit-keyframes loader {
+  0% { background: #ddd; }
+  33% { background: #ccc; box-shadow: 0 0 1px #ccc, 15px 30px 1px #ccc, -15px 30px 1px #ddd; }
+  66% { background: #ccc; box-shadow: 0 0 1px #ccc, 15px 30px 1px #ddd, -15px 30px 1px #ccc; }
+}
+
+@-moz-keyframes loader {
+  0% { background: #ddd; }
+  33% { background: #ccc; box-shadow: 0 0 1px #ccc, 15px 30px 1px #ccc, -15px 30px 1px #ddd; }
+  66% { background: #ccc; box-shadow: 0 0 1px #ccc, 15px 30px 1px #ddd, -15px 30px 1px #ccc; }
+}
+
+@keyframes loader {
+  0% { background: #ddd; }
+  33% { background: #ccc; box-shadow: 0 0 1px #ccc, 15px 30px 1px #ccc, -15px 30px 1px #ddd; }
+  66% { background: #ccc; box-shadow: 0 0 1px #ccc, 15px 30px 1px #ddd, -15px 30px 1px #ccc; }
+}
+
+@media screen and (max-width: 830px) {
+
+  .grid-expander h3 { font-size: 32px; }
+  .grid-expander p { font-size: 13px; }
+  .grid-expander a { font-size: 12px; }
+
+}
+
+@media screen and (max-width: 650px) {
+
+  .grid-fullimg { display: none; }
+  .grid-details { float: none; width: 100%; }
+  
 }
 
 // * * * * * * * * * * * * * * * * * * * * * * * * ABOUT
 
 #about {
-  height: 1000px;
   position: relative;
-  background: $dark-color;
+  background: $primary-color;
+  .cs-info {
+    p {
+      margin-top: 100px;
+    }
+    .cs-img {
+      padding: 2%;
+      margin-top: 20px;
+      border-radius: 100%;
+      width: 100%;
+    }
+    .cs-img-caption span {
+      font-size: .85em;
+    }
+  }
 }
 
 // * * * * * * * * * * * * * * * * * * * * * * * * CONTACT
@@ -637,8 +881,8 @@ a.magellan-link {
 #contact {
   background: $light-color;
   position: relative;
-  min-height: 800px;
-  h3, p {
+  min-height: 700px;
+  h3, h4 {
     position: relative;
     z-index: 10;
   }
@@ -659,30 +903,33 @@ a.magellan-link {
 
 #contact-form-row {
   position: relative;
+  margin-top: 60px;
   z-index: 10;
-  .contact-label {
-    margin-bottom: 0;
-    padding-bottom: 0;
+  @media screen and (max-width: 1025px) {
+    padding-bottom: 60px;
   }
-  .inline-input input {
+  .contact-label {
+    padding: 0 0 10px 0;
+    font-size: .8em;
+  }
+  .inline-input input[type="text"], .inline-input input[type="email"] {
     background: none;
+    height: 1.1em;
+    font-size: 1.25em;
     border: 0;
     box-shadow: none;
-    border-bottom: 1px solid $dark-color;
+    padding: 0px !important;
+    border-bottom: 1px solid darken($light-color, 20%);
   }
-}
-
-.subject-label {
-  padding-right: 0;
 }
 
 textarea {
   height: 180px !important;
-  background: -webkit-linear-gradient(left, rgba(255,255,255,0) 15px, transparent 15px), -webkit-linear-gradient(right, rgba(255,255,255,0) 15px, transparent 15px), -webkit-linear-gradient(rgba(255,255,255,0) 30px, $dark-color 30px, $dark-color 31px, rgba(255,255,255,0) 31px);
-  background: -moz-linear-gradient(left, rgba(255,255,255,0) 15px, transparent 15px), -moz-linear-gradient(right, rgba(255,255,255,0) 15px, transparent 15px), -moz-linear-gradient(rgba(255,255,255,0) 30px, $dark-color 30px, $dark-color 31px, rgba(255,255,255,0) 31px);
-  background: -ms-linear-gradient(left, rgba(255,255,255,0) 15px, transparent 15px), -ms-linear-gradient(right, rgba(255,255,255,0) 15px, transparent 15px), -ms-linear-gradient(rgba(255,255,255,0) 30px, $dark-color 30px, $dark-color 31px, rgba(255,255,255,0) 31px);
-  background: -o-linear-gradient(left, rgba(255,255,255,0) 15px, transparent 15px), -o-linear-gradient(right, rgba(255,255,255,0) 15px, transparent 15px), -o-linear-gradient(rgba(255,255,255,0) 30px, $dark-color 30px, $dark-color 31px, rgba(255,255,255,0) 31px);
-  background: linear-gradient(left, rgba(255,255,255,0) 15px, transparent 15px), linear-gradient(right, rgba(255,255,255,0) 15px, transparent 15px), linear-gradient(rgba(255,255,255,0) 30px, $dark-color 30px, $dark-color 31px, rgba(255,255,255,0) 31px);
+  background: -webkit-linear-gradient(left, rgba(255,255,255,0) 15px, transparent 15px), -webkit-linear-gradient(right, rgba(255,255,255,0) 15px, transparent 15px), -webkit-linear-gradient(rgba(255,255,255,0) 30px, darken($light-color, 20%) 30px, darken($light-color, 20%) 31px, rgba(255,255,255,0) 31px);
+  background: -moz-linear-gradient(left, rgba(255,255,255,0) 15px, transparent 15px), -moz-linear-gradient(right, rgba(255,255,255,0) 15px, transparent 15px), -moz-linear-gradient(rgba(255,255,255,0) 30px, darken($light-color, 20%) 30px, darken($light-color, 20%) 31px, rgba(255,255,255,0) 31px);
+  background: -ms-linear-gradient(left, rgba(255,255,255,0) 15px, transparent 15px), -ms-linear-gradient(right, rgba(255,255,255,0) 15px, transparent 15px), -ms-linear-gradient(rgba(255,255,255,0) 30px, darken($light-color, 20%) 30px, darken($light-color, 20%) 31px, rgba(255,255,255,0) 31px);
+  background: -o-linear-gradient(left, rgba(255,255,255,0) 15px, transparent 15px), -o-linear-gradient(right, rgba(255,255,255,0) 15px, transparent 15px), -o-linear-gradient(rgba(255,255,255,0) 30px, darken($light-color, 20%) 30px, darken($light-color, 20%) 31px, rgba(255,255,255,0) 31px);
+  background: linear-gradient(left, rgba(255,255,255,0) 15px, transparent 15px), linear-gradient(right, rgba(255,255,255,0) 15px, transparent 15px), linear-gradient(rgba(255,255,255,0) 30px, darken($light-color, 20%) 30px, darken($light-color, 20%) 31px, rgba(255,255,255,0) 31px);
   background-size: 100% 100%, 100% 100%, 100% 31px;
   border: 0;
   padding: 9px;
@@ -694,11 +941,11 @@ textarea {
   line-height: 31px;
   font-family: Arial, Helvetica, Sans-serif;
   &:focus{
-    background: -webkit-linear-gradient(left, rgba(255,255,255,0) 15px, transparent 15px), -webkit-linear-gradient(right, rgba(255,255,255,0) 15px, transparent 15px), -webkit-linear-gradient(rgba(255,255,255,0) 30px, $dark-color 30px, $dark-color 31px, rgba(255,255,255,0) 31px);
-    background: -moz-linear-gradient(left, rgba(255,255,255,0) 15px, transparent 15px), -moz-linear-gradient(right, rgba(255,255,255,0) 15px, transparent 15px), -moz-linear-gradient(rgba(255,255,255,0) 30px, $dark-color 30px, $dark-color 31px, rgba(255,255,255,0) 31px);
-    background: -ms-linear-gradient(left, rgba(255,255,255,0) 15px, transparent 15px), -ms-linear-gradient(right, rgba(255,255,255,0) 15px, transparent 15px), -ms-linear-gradient(rgba(255,255,255,0) 30px, $dark-color 30px, $dark-color 31px, rgba(255,255,255,0) 31px);
-    background: -o-linear-gradient(left, rgba(255,255,255,0) 15px, transparent 15px), -o-linear-gradient(right, rgba(255,255,255,0) 15px, transparent 15px), -o-linear-gradient(rgba(255,255,255,0) 30px, $dark-color 30px, $dark-color 31px, rgba(255,255,255,0) 31px);
-    background: linear-gradient(left, rgba(255,255,255,0) 15px, transparent 15px), linear-gradient(right, rgba(255,255,255,0) 15px, transparent 15px), linear-gradient(rgba(255,255,255,0) 30px, $dark-color 30px, $dark-color 31px, rgba(255,255,255,0) 31px);
+    background: -webkit-linear-gradient(left, rgba(255,255,255,0) 15px, transparent 15px), -webkit-linear-gradient(right, rgba(255,255,255,0) 15px, transparent 15px), -webkit-linear-gradient(rgba(255,255,255,0) 30px, darken($light-color, 20%) 30px, darken($light-color, 20%) 31px, rgba(255,255,255,0) 31px);
+    background: -moz-linear-gradient(left, rgba(255,255,255,0) 15px, transparent 15px), -moz-linear-gradient(right, rgba(255,255,255,0) 15px, transparent 15px), -moz-linear-gradient(rgba(255,255,255,0) 30px, darken($light-color, 20%) 30px, darken($light-color, 20%) 31px, rgba(255,255,255,0) 31px);
+    background: -ms-linear-gradient(left, rgba(255,255,255,0) 15px, transparent 15px), -ms-linear-gradient(right, rgba(255,255,255,0) 15px, transparent 15px), -ms-linear-gradient(rgba(255,255,255,0) 30px, darken($light-color, 20%) 30px, darken($light-color, 20%) 31px, rgba(255,255,255,0) 31px);
+    background: -o-linear-gradient(left, rgba(255,255,255,0) 15px, transparent 15px), -o-linear-gradient(right, rgba(255,255,255,0) 15px, transparent 15px), -o-linear-gradient(rgba(255,255,255,0) 30px, darken($light-color, 20%) 30px, darken($light-color, 20%) 31px, rgba(255,255,255,0) 31px);
+    background: linear-gradient(left, rgba(255,255,255,0) 15px, transparent 15px), linear-gradient(right, rgba(255,255,255,0) 15px, transparent 15px), linear-gradient(rgba(255,255,255,0) 30px, darken($light-color, 20%) 30px, darken($light-color, 20%) 31px, rgba(255,255,255,0) 31px);
     background-size: 100% 100%, 100% 100%, 100% 31px;
     border: 0;
     box-shadow: none;
@@ -715,10 +962,24 @@ textarea {
 // * * * * * * * * * * * * * * * * * * * * * * * * FOOTER
 
 footer {
-  height: 80px;
-  padding-top: 20px;
+  height: 200px;
+  padding-top: 60px;
   text-align: center;
   background: $dark-color;
   color: lighten($dark-color, 20%);
+  a {
+    @media screen and (max-width: 641px) {
+      font-size: 4em;
+    }
+    font-size: 3em;
+    margin: 0 10px;
+    color: lighten($dark-color, 20%);
+    &:hover {
+      color: lighten($dark-color, 50%);
+    }
+  }
+  p {
+    margin-top: 20px;
+  }
 }
       
