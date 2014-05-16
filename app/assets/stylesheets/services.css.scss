@@ -1,0 +1,45 @@
+#services {
+  position: relative;
+  background: $secondary-color;
+  border-bottom: 10px solid $light-color;
+  .service-section {
+    margin-top: 120px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid lighten($secondary-color, 15%);
+  }
+  .service-sub {
+    border-radius: 30px;
+    position: relative;
+    margin: 60px 0;
+    h4 {
+      padding-top: 15px;
+      margin-bottom: 0;
+    }
+    span {
+      font-size: 6em;
+      position: absolute;
+    }
+    &.desc-right {
+      text-align: right;
+      padding-right: 120px;
+      h4 {
+        text-align: right;
+      }
+      span {
+        right: 0px;
+        top: 0px;
+      }
+    }
+    &.desc-left {
+      text-align: left;
+      padding-left: 120px;
+      h4 {
+        text-align: left;
+      }
+      span {
+        left: 0px;
+        top: 0px;
+      }
+    }
+  }
+}

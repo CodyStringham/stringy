@@ -38,7 +38,7 @@ $ ->
       wideScreen = true
 
     if width < 641 && wideScreen == true
-      wideScreen = false  
+      wideScreen = false
 
     if wideScreen == true && screenOffset == true
       fixNav.fadeIn()
@@ -46,28 +46,28 @@ $ ->
     else
       fixNav.fadeOut()
 
- 
+
   # Sets up a timer on scroll, clears after .025 seconds
   timer = undefined
   $(window).scroll ->
     window.clearTimeout timer if timer
     timer = window.setTimeout(->
-      
+
       # Callback when timer is cleared
       checkScrollTop( getOffset() )
-      checkWideScreen( getWidth() )      
+      checkWideScreen( getWidth() )
     , 25)
 
   # Sets up a timer on window resize, clears after .1 seconds
   $(window).resize ->
     window.clearTimeout timer if timer
     timer = window.setTimeout(->
-      
+
       # Callback when timer is cleared
       checkWideScreen( getWidth() )
     , 100)
 
-    
+
   # Function that animates on-page links over .8 seconds
   slideScroll = (element, navheight) ->
     root = $("body,html")
@@ -110,10 +110,10 @@ $ ->
 
     $.CatSlider:: =
       _init: (options) ->
-        
+
         # the categories (ul)
         @$categories = @$el.children("ul")
-        
+
         # the navigation
         @$navcategories = @$el.find("nav > a")
         animEndEventNames =
@@ -122,16 +122,16 @@ $ ->
           msAnimation: "MSAnimationEnd"
           animation: "animationend"
 
-        
+
         # animation end event name
         @animEndEventName = animEndEventNames[Modernizr.prefixed("animation")]
-        
+
         # animations and transforms support
         @support = Modernizr.csstransforms and Modernizr.cssanimations
-        
+
         # if currently animating
         @isAnimating = false
-        
+
         # current category
         @current = 0
         $currcat = @$categories.eq(0)
@@ -140,10 +140,10 @@ $ ->
           $currcat.show()
         else
           $currcat.addClass "serv-current"
-        
+
         # current nav category
         @$navcategories.eq(0).addClass "serv-selected"
-        
+
         # initialize the events
         @_initEvents()
         return
@@ -154,7 +154,7 @@ $ ->
           self.showCategory $(this).index()
           false
 
-        
+
         # reset on window resize..
         $(window).on "resize", ->
           self.$categories.removeClass().eq(0).addClass "serv-current"
@@ -167,16 +167,16 @@ $ ->
       showCategory: (catidx) ->
         return false  if catidx is @current or @isAnimating
         @isAnimating = true
-        
+
         # update selected navigation
         @$navcategories.eq(@current).removeClass("serv-selected").end().eq(catidx).addClass "serv-selected"
         dir = (if catidx > @current then "right" else "left")
         toClass = (if dir is "right" then "serv-moveToLeft" else "serv-moveToRight")
         fromClass = (if dir is "right" then "serv-moveFromRight" else "serv-moveFromLeft")
-        
+
         # current category
         $currcat = @$categories.eq(@current)
-        
+
         # new category
         $newcat = @$categories.eq(catidx)
         $newcatchild = $newcat.children()
@@ -191,7 +191,7 @@ $ ->
               $newcat.addClass "serv-current"
               self.current = catidx
               $this = $(this)
-              
+
               # solve chrome bug
               self.forceRedraw $this.get(0)
               self.isAnimating = false
@@ -206,7 +206,7 @@ $ ->
           @isAnimating = false
         return
 
-      
+
       # based on http://stackoverflow.com/a/8840703/989439
       forceRedraw: (element) ->
         return  unless element
@@ -240,7 +240,3 @@ $ ->
   ) jQuery, window
 
   $("#serv-slide").catslider()
-
-
-
-

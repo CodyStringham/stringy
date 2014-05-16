@@ -37,23 +37,23 @@ nav.top-bar.mobile-nav data-topbar=""
   div#fixed-nav.fixed-nav-bar data-magellan-expedition="fixed"
     =image_tag("logo_b.svg", alt: "5tringy Creative Logo")
     ul.sub-nav.right
-      li.home-item.active data-magellan-arrival="home" 
+      li.home-item.active data-magellan-arrival="home"
         a href="#home"  Home
-      li.services-item data-magellan-arrival="services" 
+      li.services-item data-magellan-arrival="services"
         a href="#services"  Services
-      li.project-item data-magellan-arrival="projects" 
+      li.project-item data-magellan-arrival="projects"
         a href="#projects"  Projects
-      li.about-item data-magellan-arrival="about" 
+      li.about-item data-magellan-arrival="about"
         a href="#about"  About
-      li.contact-item data-magellan-arrival="contact" 
+      li.contact-item data-magellan-arrival="contact"
         a href="#contact"  Contact
 
   .row.section-row
     .large-12.columns
       h1.page-head-hidden 5tringy Creative, Salk Lake design. Web Design, SEO, Graphic Design.
       h3.page-head Rise above all the rest
-      h4.subhead We focus on making you stand out in the best way possible. Don't be ashamed of your website anymore, we'll make you one so good your competition will be scrambling!
-      .row.home-trifecta    
+      h4.subhead We focus on making you stand out in the best way possible. Don't be ashamed of your website anymore, we'll make you one so good your competition will be drooling!
+      .row.home-trifecta
         .medium-4.columns.trifecta-cols
           span.fa.fa-leaf.fresh
           h4 Fresh
@@ -71,17 +71,17 @@ nav.top-bar.mobile-nav data-topbar=""
 
 
 #services.content-container
-  span data-magellan-destination="services" 
+  span data-magellan-destination="services"
   a.magellan-link name="services"
   .row.section-row.light
     .large-12.columns
       h3.page-head.light Get back up to speed
       h4.subhead.light It's time to get serious about your visual identity, in today's market quality establishes trust. We're here to help your customers build more confidence in your brand.
-  
+
   =render 'slide'
 
   .area-foot.angle
-        
+
 
 #projects.content-container
   span data-magellan-destination="projects"
@@ -89,8 +89,8 @@ nav.top-bar.mobile-nav data-topbar=""
   .row.section-row
     .large-12.columns
       h3.page-head Our latest projects
-      h4.subhead 
-        | Here is some of our best pudding, we're certain you will find 
+      h4.subhead
+        | Here is some of our best pudding, we're certain you will find
         em "the proof"
         |  inside.
 
@@ -112,8 +112,8 @@ nav.top-bar.mobile-nav data-topbar=""
           p.text-left I am the founder, designer, and developer here at 5tringy Creative.
         .medium-4.small-8.columns
           =image_tag('cody.jpg', alt: "Cody Stringham", class: "cs-img")
-          h4.cs-img-caption.light.text-center 
-            | me 
+          h4.cs-img-caption.light.text-center
+            | me
             span.fa.fa-arrow-up
         .medium-4.columns
           p.text-right Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
@@ -134,14 +134,14 @@ nav.top-bar.mobile-nav data-topbar=""
       = simple_form_for @contact_email, url: contact_path do |f|
         .large-4.columns
           .row
-            .large-3.columns  
+            .large-3.columns
               = f.label :name, class:"left inline contact-label"
             .large-9.medium-6.left.columns.inline-input
               = f.input :name, label:false
 
         .large-4.columns
           .row
-            .large-3.columns  
+            .large-3.columns
               = f.label :email, class:"left inline contact-label"
             .large-9.medium-6.left.columns.inline-input
               = f.input :email, label:false
@@ -153,15 +153,15 @@ nav.top-bar.mobile-nav data-topbar=""
             .large-9.medium-6.left.columns.inline-input
               = f.input :subject, label:false
 
-        .large-12.columns  
+        .large-12.columns
           = f.label :message, class:"left inline contact-label"
         .large-12.columns
           = f.input :message, label:false
 
           .row
-            .large-2.large-offset-5.medium-4.medium-offset-4.small-6.small-offset-3.columns         
+            .large-2.large-offset-5.medium-4.medium-offset-4.small-6.small-offset-3.columns
               = f.submit "Send Email", class:"button round expand secondary"
-  
+
   .area-foot.geo-dark
 
 
@@ -175,6 +175,3 @@ footer
       a href="#"
         i.fa.fa-linkedin-square
       p Copyright &COPY; #{Time.now.year}, 5tringy Creative
-
-
-

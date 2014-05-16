@@ -1,0 +1,54 @@
+* {
+  transition: background .3s ease, color .3s ease, box-shadow .3s ease, transform 1s ease;
+  -webkit-transition: background .3s ease, color .3s ease, -webkit-box-shadow .3s ease, -webkit-transform 1s ease;
+  -moz-transition: background .3s ease, color .3s ease, -moz-box-shadow .3s ease, -moz-transform 1s ease;
+  -o-transition: background .3s ease, color .3s ease, -o-box-shadow .3s ease, -o-transform 1s ease;
+
+}
+
+@font-face {
+    font-family: 'NexaSlab';
+    src: url(font-path('NexaSlab.eot') + "?#iefix") format('embedded-opentype'),
+         url(font-path('NexaSlab.woff')) format('woff'),
+         url(font-path('NexaSlab.ttf'))  format('truetype'),
+         url(font-path('NexaSlab.svg') + "#NexaSlab") format('svg');
+}
+
+html, body {
+  margin: 0px;
+  padding: 0px;
+}
+
+.section-row {
+  padding-top: 120px;
+  @media screen and (max-width: 641px) {
+    padding-top: 60px;
+  }
+}
+
+.content-container {
+  padding-bottom: 120px;
+  @media screen and (max-width: 641px) {
+    padding-bottom: 60px;
+  }
+}
+
+.page-head, .subhead {
+  text-align: center;
+}
+
+.page-head {
+  font-size: 3em;
+  @media screen and (max-width: 641px) {
+    font-size: 2em;
+  }
+}
+
+.subhead {
+  font-family: Helvetica;
+  opacity: .75;
+}
+
+.light {
+  color: #fff;
+}

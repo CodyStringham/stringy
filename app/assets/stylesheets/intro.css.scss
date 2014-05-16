@@ -1,0 +1,49 @@
+#intro {
+  position: relative;
+  background: #FFF;
+  .page-head-hidden {
+    height: 5px;
+    text-indent: -9999px;
+  }
+  .home-trifecta {
+    margin-top: 100px;
+    text-align: center;
+    @media screen and (max-width: 641px) {
+      margin-top: 20px;
+    }
+    p {
+      opacity: .75;
+      margin-bottom: 60px;
+      padding-top: 10px;
+      border-top: 2px dotted $light-color;
+    }
+    span {
+      margin: 20px 0;
+      background: $secondary-color;
+      color: #fff;
+      border-radius: 100%;
+      &.fresh {
+        padding: .65em .65em;
+        font-size: 3.5em;
+      }
+      &.agile {
+        margin-top: 40px;
+        font-size: 5em;
+        padding: .65em .91em;
+        @media screen and (max-width: 641px) {
+          font-size: 3.5em;
+          margin-top: 20px;
+        }
+      }
+      &.shield {
+        font-size: 2em;
+        padding: .72em .88em;
+        margin-top: 30;
+        @media screen and (max-width: 641px) {
+          font-size: 3.5em;
+          margin-top: 20px;
+        }
+      }
+    }
+  }
+}

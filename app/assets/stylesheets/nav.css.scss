@@ -1,0 +1,81 @@
+.top-jump {
+  padding: 10px 9px 10px 11px;
+  color: $light-color;
+  border-radius: 100%;
+  font-size: 2em;
+  font-weight: bold;
+  position: relative;
+  right: 10px;
+  bottom: 10px;
+  position: fixed;
+  z-index: 100;
+  background: lighten($dark-color, 10%);
+  opacity: 0;
+  -webkit-animation: moveToRight 350ms ease-in-out both;
+  animation: moveToRight 350ms ease-in-out both;
+  &.top-jump-active {
+    -webkit-animation: moveFromRight 350ms ease-in-out both;
+    animation: moveFromRight 350ms ease-in-out both;
+  }
+  &:hover {
+    color: #fff;
+    background: lighten($dark-color, 15%)
+  }
+  @media screen and (max-width: 641px) {
+    display: none;
+  }
+}
+
+.mobile-nav {
+  display: none;
+  @media screen and (max-width: 641px) {
+    display: block;
+  }
+}
+
+//stops magellan travel earlier
+a.magellan-link {
+  position: relative;
+  top: 60px;
+}
+
+#fixed-nav {
+  background: #fff;
+  display: none;
+  height: 55px;
+  @media screen and (max-width: 641px) {
+    display: none;
+  }
+  img{
+    height: 35px;
+    margin-left: 20px;
+  }
+  ul{
+    list-style: none;
+    li{
+      &:last-child {
+        margin-right: 20px;
+      }
+      &.active a {
+        background: $light-color;
+        color: $dark-color !important;
+      }
+      a{
+        float: right;
+        color: $dark-color;
+        text-align: center;
+        margin: 0;
+        padding: 5px 10px;
+        width: 100px;
+        border-radius: 30px;
+        @media screen and (max-width: 780px) {
+          width: 75px;
+        }
+        &:hover {
+          color: $dark-color !important;
+          background: $light-color !important;
+        }
+      }
+    }
+  }
+}

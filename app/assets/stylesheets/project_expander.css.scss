@@ -1,0 +1,185 @@
+.main > p {
+  text-align: center;
+  padding: 50px 20px;
+}
+
+.grid-grid {
+  list-style: none;
+  padding: 20px 0;
+  margin: 0 auto;
+  text-align: center;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.grid-grid li {
+  display: inline-block;
+  margin: 10px 5px 0 5px;
+  vertical-align: top;
+  height: 250px;
+}
+
+.grid-grid li a img {
+  max-width: 250px;
+}
+
+.grid-grid li > a,
+.grid-grid li > a img {
+  border: none;
+  outline: none;
+  display: block;
+  position: relative;
+}
+
+.grid-grid li.grid-expanded > a::after {
+  top: auto;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+  border-bottom-color: $dark-color;
+  border-width: 15px;
+  left: 50%;
+  margin: -20px 0 0 -15px;
+}
+
+.grid-expander {
+  position: absolute;
+  background: $dark-color;
+  top: auto;
+  left: 0;
+  width: 100%;
+  margin-top: 10px;
+  text-align: left;
+  height: 0;
+  overflow: hidden;
+}
+
+.grid-expander-inner {
+  padding: 50px 30px;
+  height: 100%;
+}
+
+.expand-close {
+  position: absolute;
+  background: $dark-color;
+  font-size: 2.5em;
+  color: lighten($dark-color, 30%);
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=.5);
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.expand-close:hover::before,
+.expand-close:hover::after {
+  color: lighten($dark-color, 15%);
+}
+
+.grid-fullimg,
+.grid-details {
+  width: 50%;
+  float: left;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.grid-details {
+  padding: 0 40px 0 20px;
+}
+
+.grid-fullimg {
+  text-align: center;
+}
+
+.grid-fullimg img {
+  display: inline-block;
+  max-height: 100%;
+  max-width: 100%;
+}
+
+.grid-details h3 {
+  color: $light-color;
+  font-weight: 300;
+  font-size: 2.5em;
+  padding: 40px 0 10px;
+  margin-bottom: 10px;
+}
+
+.grid-details p {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+  color: lighten($dark-color, 30%);
+}
+
+.grid-details a {
+  font-size: 1rem;
+  border-radius: 30px;
+  background: lighten($dark-color, 30%);
+  color: $dark-color;
+  padding: 10px 30px;
+  display: inline-block;
+  margin: 30px 0 0;
+  outline: none;
+}
+
+.grid-details a:hover {
+  background: lighten($dark-color, 20%);
+}
+
+.grid-loading {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #ddd;
+  box-shadow: 0 0 1px #ccc, 15px 30px 1px #ccc, -15px 30px 1px #ccc;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -25px 0 0 -25px;
+  -webkit-animation: loader 0.5s infinite ease-in-out both;
+  -moz-animation: loader 0.5s infinite ease-in-out both;
+  animation: loader 0.5s infinite ease-in-out both;
+}
+
+@-webkit-keyframes loader {
+  0% { background: #ddd; }
+  33% { background: #ccc; box-shadow: 0 0 1px #ccc, 15px 30px 1px #ccc, -15px 30px 1px #ddd; }
+  66% { background: #ccc; box-shadow: 0 0 1px #ccc, 15px 30px 1px #ddd, -15px 30px 1px #ccc; }
+}
+
+@-moz-keyframes loader {
+  0% { background: #ddd; }
+  33% { background: #ccc; box-shadow: 0 0 1px #ccc, 15px 30px 1px #ccc, -15px 30px 1px #ddd; }
+  66% { background: #ccc; box-shadow: 0 0 1px #ccc, 15px 30px 1px #ddd, -15px 30px 1px #ccc; }
+}
+
+@keyframes loader {
+  0% { background: #ddd; }
+  33% { background: #ccc; box-shadow: 0 0 1px #ccc, 15px 30px 1px #ccc, -15px 30px 1px #ddd; }
+  66% { background: #ccc; box-shadow: 0 0 1px #ccc, 15px 30px 1px #ddd, -15px 30px 1px #ccc; }
+}
+
+@media screen and (max-width: 830px) {
+
+  .grid-expander h3 { font-size: 32px; }
+  .grid-expander p { font-size: 13px; }
+  .grid-expander a { font-size: 12px; }
+
+}
+
+@media screen and (max-width: 650px) {
+
+  .grid-fullimg { display: none; }
+  .grid-details { float: none; width: 100%; }
+
+}

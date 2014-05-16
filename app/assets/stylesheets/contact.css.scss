@@ -1,0 +1,77 @@
+#contact {
+  background: $light-color;
+  position: relative;
+  min-height: 700px;
+  h3, h4 {
+    position: relative;
+    z-index: 10;
+  }
+}
+
+.contact-icon {
+  font-size: 20em;
+  color: lighten($light-color, 5%);
+  position: absolute;
+  top: -60px;
+  right: 50px;
+  z-index: 0;
+  @media screen and (max-width: 400px) {
+    right: 30px;
+    font-size: 15em;
+  }
+}
+
+#contact-form-row {
+  position: relative;
+  margin-top: 60px;
+  z-index: 10;
+  @media screen and (max-width: 1025px) {
+    padding-bottom: 60px;
+  }
+  .contact-label {
+    padding: 0 0 10px 0;
+    font-size: .8em;
+  }
+  .inline-input input[type="text"], .inline-input input[type="email"] {
+    background: none;
+    height: 1.1em;
+    font-size: 1.25em;
+    border: 0;
+    box-shadow: none;
+    padding: 0px !important;
+    border-bottom: 1px solid darken($light-color, 20%);
+  }
+}
+
+textarea {
+  height: 180px !important;
+  background: -webkit-linear-gradient(left, rgba(255,255,255,0) 15px, transparent 15px), -webkit-linear-gradient(right, rgba(255,255,255,0) 15px, transparent 15px), -webkit-linear-gradient(rgba(255,255,255,0) 30px, darken($light-color, 20%) 30px, darken($light-color, 20%) 31px, rgba(255,255,255,0) 31px);
+  background: -moz-linear-gradient(left, rgba(255,255,255,0) 15px, transparent 15px), -moz-linear-gradient(right, rgba(255,255,255,0) 15px, transparent 15px), -moz-linear-gradient(rgba(255,255,255,0) 30px, darken($light-color, 20%) 30px, darken($light-color, 20%) 31px, rgba(255,255,255,0) 31px);
+  background: -ms-linear-gradient(left, rgba(255,255,255,0) 15px, transparent 15px), -ms-linear-gradient(right, rgba(255,255,255,0) 15px, transparent 15px), -ms-linear-gradient(rgba(255,255,255,0) 30px, darken($light-color, 20%) 30px, darken($light-color, 20%) 31px, rgba(255,255,255,0) 31px);
+  background: -o-linear-gradient(left, rgba(255,255,255,0) 15px, transparent 15px), -o-linear-gradient(right, rgba(255,255,255,0) 15px, transparent 15px), -o-linear-gradient(rgba(255,255,255,0) 30px, darken($light-color, 20%) 30px, darken($light-color, 20%) 31px, rgba(255,255,255,0) 31px);
+  background: linear-gradient(left, rgba(255,255,255,0) 15px, transparent 15px), linear-gradient(right, rgba(255,255,255,0) 15px, transparent 15px), linear-gradient(rgba(255,255,255,0) 30px, darken($light-color, 20%) 30px, darken($light-color, 20%) 31px, rgba(255,255,255,0) 31px);
+  background-size: 100% 100%, 100% 100%, 100% 31px;
+  border: 0;
+  padding: 9px;
+  box-shadow: none;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  -o-box-shadow: none;
+  -ms-box-shadow: none;
+  line-height: 31px;
+  font-family: Arial, Helvetica, Sans-serif;
+  &:focus{
+    background: -webkit-linear-gradient(left, rgba(255,255,255,0) 15px, transparent 15px), -webkit-linear-gradient(right, rgba(255,255,255,0) 15px, transparent 15px), -webkit-linear-gradient(rgba(255,255,255,0) 30px, darken($light-color, 20%) 30px, darken($light-color, 20%) 31px, rgba(255,255,255,0) 31px);
+    background: -moz-linear-gradient(left, rgba(255,255,255,0) 15px, transparent 15px), -moz-linear-gradient(right, rgba(255,255,255,0) 15px, transparent 15px), -moz-linear-gradient(rgba(255,255,255,0) 30px, darken($light-color, 20%) 30px, darken($light-color, 20%) 31px, rgba(255,255,255,0) 31px);
+    background: -ms-linear-gradient(left, rgba(255,255,255,0) 15px, transparent 15px), -ms-linear-gradient(right, rgba(255,255,255,0) 15px, transparent 15px), -ms-linear-gradient(rgba(255,255,255,0) 30px, darken($light-color, 20%) 30px, darken($light-color, 20%) 31px, rgba(255,255,255,0) 31px);
+    background: -o-linear-gradient(left, rgba(255,255,255,0) 15px, transparent 15px), -o-linear-gradient(right, rgba(255,255,255,0) 15px, transparent 15px), -o-linear-gradient(rgba(255,255,255,0) 30px, darken($light-color, 20%) 30px, darken($light-color, 20%) 31px, rgba(255,255,255,0) 31px);
+    background: linear-gradient(left, rgba(255,255,255,0) 15px, transparent 15px), linear-gradient(right, rgba(255,255,255,0) 15px, transparent 15px), linear-gradient(rgba(255,255,255,0) 30px, darken($light-color, 20%) 30px, darken($light-color, 20%) 31px, rgba(255,255,255,0) 31px);
+    background-size: 100% 100%, 100% 100%, 100% 31px;
+    border: 0;
+    box-shadow: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    -o-box-shadow: none;
+    -ms-box-shadow: none;
+  }
+}

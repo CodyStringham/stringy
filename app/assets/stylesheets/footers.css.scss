@@ -1,0 +1,55 @@
+.area-foot {
+  position: absolute;
+  bottom: 0;
+  height: 60px;
+  width: 100%;
+  @media screen and (max-width: 641px) {
+    height: 30px;
+  }
+  &.geo-white {
+    background: url('footer_w.svg') center bottom repeat-x;
+    background-size: cover;
+  }
+  &.bubs {
+    background: url('footer_bubs.svg') center bottom repeat-x;
+    background-size: cover;
+  }
+  &.angle {
+    background: url('footer_angle.svg') center bottom repeat-x;
+    background-size: cover;
+  }
+  &.angle-bottom {
+    background: url('footer_angle_bottom.svg') center bottom repeat-x;
+    background-size: cover;
+  }
+  &.curve {
+    background: url('footer_curve.svg') center bottom repeat-x;
+    background-size: cover;
+  }
+  &.geo-dark {
+    background: url('footer_d.svg') center bottom repeat-x;
+    background-size: cover;
+  }
+}
+
+footer {
+  height: 200px;
+  padding-top: 60px;
+  text-align: center;
+  background: $dark-color;
+  color: lighten($dark-color, 20%);
+  a {
+    @media screen and (max-width: 641px) {
+      font-size: 4em;
+    }
+    font-size: 3em;
+    margin: 0 10px;
+    color: lighten($dark-color, 20%);
+    &:hover {
+      color: lighten($dark-color, 50%);
+    }
+  }
+  p {
+    margin-top: 20px;
+  }
+}

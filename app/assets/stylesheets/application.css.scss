@@ -5,4 +5,14 @@ $dark-color: #646464;
 
 
 @import 'foundation_and_overrides';
+@import 'base';
+@import 'nav';
+@import 'footers';
+@import 'intro';
 @import 'home';
+@import 'services';
+@import 'service_slide';
+@import 'projects';
+@import 'project_expander';
+@import 'about';
+@import 'contact';
