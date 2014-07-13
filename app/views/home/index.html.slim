@@ -1,24 +1,6 @@
 a.top-jump.fa.fa-arrow-up href="#home"
 
-nav.top-bar.mobile-nav data-topbar=""
-  ul.title-area
-    li.name
-      h1
-        a href="#"  5tringy
-    li.toggle-topbar.menu-icon
-      a.mobile-nav-menu href=""
-  section.top-bar-section
-    ul.right.mobile-nav-list
-      li
-        a href="#home"  Home
-      li
-        a href="#services"  Services
-      li
-        a href="#projects"  Projects
-      li
-        a href="#about"  About
-      li
-        a href="#contact"  Contact
+= render "mobile-nav"
 
 #home
   .row
@@ -34,19 +16,7 @@ nav.top-bar.mobile-nav data-topbar=""
 
 
 #intro.content-container
-  div#fixed-nav.fixed-nav-bar data-magellan-expedition="fixed"
-    =image_tag("logo_b.svg", alt: "5tringy Creative Logo")
-    ul.sub-nav.right
-      li.home-item.active data-magellan-arrival="home"
-        a href="#home"  Home
-      li.services-item data-magellan-arrival="services"
-        a href="#services"  Services
-      li.project-item data-magellan-arrival="projects"
-        a href="#projects"  Projects
-      li.about-item data-magellan-arrival="about"
-        a href="#about"  About
-      li.contact-item data-magellan-arrival="contact"
-        a href="#contact"  Contact
+  = render "desktop-nav"
 
   .row.section-row
     .large-12.columns
@@ -76,9 +46,9 @@ nav.top-bar.mobile-nav data-topbar=""
   .row.section-row.light
     .large-12.columns
       h3.page-head.light Get back up to speed
-      h4.subhead.light It's time to get serious about your visual identity, in today's market quality establishes trust. We're here to help your customers build more confidence in your brand.
+      h4.subhead.light It's time to get serious about your visual identity, in today's market quality establishes trust. I'm here to help your customers build more confidence in your brand.
 
-  =render 'slide'
+  = render 'slide'
 
   .area-foot.angle
 
@@ -90,11 +60,9 @@ nav.top-bar.mobile-nav data-topbar=""
     .large-12.columns
       h3.page-head Our latest projects
       h4.subhead
-        | Here is some of our best pudding, we're certain you will find
-        em "the proof"
-        |  inside.
+        | Here is some of my best pudding, click on one to learn more about it.
 
-  =render "grid"
+  = render "grid"
 
   .area-foot.angle-bottom
 
@@ -131,36 +99,7 @@ nav.top-bar.mobile-nav data-topbar=""
       i.fa.fa-comments.contact-icon
 
   .row#contact-form-row
-      = simple_form_for @contact_email, url: contact_path do |f|
-        .large-4.columns
-          .row
-            .large-3.columns
-              = f.label :name, class:"left inline contact-label"
-            .large-9.medium-6.left.columns.inline-input
-              = f.input :name, label:false
-
-        .large-4.columns
-          .row
-            .large-3.columns
-              = f.label :email, class:"left inline contact-label"
-            .large-9.medium-6.left.columns.inline-input
-              = f.input :email, label:false
-
-        .large-4.columns
-          .row
-            .large-3.columns
-              = f.label :subject, class:"left inline contact-label"
-            .large-9.medium-6.left.columns.inline-input
-              = f.input :subject, label:false
-
-        .large-12.columns
-          = f.label :message, class:"left inline contact-label"
-        .large-12.columns
-          = f.input :message, label:false
-
-          .row
-            .large-2.large-offset-5.medium-4.medium-offset-4.small-6.small-offset-3.columns
-              = f.submit "Send Email", class:"button round expand secondary"
+    = render "contact-form"
 
   .area-foot.geo-dark
 

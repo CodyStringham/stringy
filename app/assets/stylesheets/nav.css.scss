@@ -21,15 +21,18 @@
     color: #fff;
     background: lighten($dark-color, 15%)
   }
-  @media screen and (max-width: 641px) {
+  @media screen and (max-width: 40em) {
     display: none;
   }
 }
 
 .mobile-nav {
   display: none;
-  @media screen and (max-width: 641px) {
+  @media screen and (max-width: 40em) {
     display: block;
+    .mobile-nav-logo {
+      width: 100px;
+    }
   }
 }
 
@@ -43,7 +46,7 @@ a.magellan-link {
   background: #fff;
   display: none;
   height: 55px;
-  @media screen and (max-width: 641px) {
+  @media screen and (max-width: 40em) {
     display: none;
   }
   img{

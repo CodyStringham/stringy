@@ -12,7 +12,11 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require foundation
+//= require foundation/foundation
+//= require foundation/foundation.magellan
+//= require foundation/foundation.topbar
 //= require_tree .
 
-$(function(){ $(document).foundation(); });
+$(function(){
+  $(document).foundation();
+});

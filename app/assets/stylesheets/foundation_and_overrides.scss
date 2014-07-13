@@ -1151,7 +1151,7 @@ $topbar-link-color-hover: $dark-color;
 // $topbar-link-weight: normal;
 // $topbar-link-font-size: rem-calc(13);
 // $topbar-link-hover-lightness: -10%; // Darken by 10%
-$topbar-link-bg-hover: darken($light-color, 10%);
+$topbar-link-bg-hover: white;
 // $topbar-link-bg-active: $primary-color;
 // $topbar-link-bg-active-hover: scale-color($primary-color, $lightness: -14%);
 // $topbar-link-font-family: $body-font-family;
@@ -1181,7 +1181,7 @@ $topbar-menu-icon-color: $dark-color;
 
 // Divider Styles
 // $topbar-divider-border-bottom: solid 1px  scale-color($topbar-bg-color, $lightness: 13%);
-// $topbar-divider-border-top: solid 1px scale-color($topbar-bg-color, $lightness: -50%);
+$topbar-divider-border-top: solid 1px scale-color($topbar-bg-color, $lightness: -20%);
 
 // Sticky Class
 // $topbar-sticky-class: ".sticky";
