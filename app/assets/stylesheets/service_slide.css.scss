@@ -313,12 +313,15 @@
       font-family: "NexaSlab";
       color: $light-color;
       font-size: 1.5em;
-      margin-top: 60px;
+      padding-top: 40px;
+      padding-right: 20px;
+      text-align: right;
+      border-top: 1px solid lighten($secondary-color, 15%);
     }
     span {
       font-family: "NexaSlab";
       font-size: 1.5em;
-      margin-top: 60px;
+      margin-top: 0px;
       display: block;
     }
   }
@@ -330,8 +333,8 @@
     transform: translateX(0) !important;
     padding: 5px;
     width: 100%;
-    border-bottom: 1px solid lighten($secondary-color, 15%);
     text-align: left;
+    height: 80px;
     img {
       position: relative;
       bottom: 7px;

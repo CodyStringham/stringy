@@ -98,7 +98,9 @@ $ ->
 
 
 
-$ ->
+
+
+
 
   # Slider
   (($, window, undefined_) ->
