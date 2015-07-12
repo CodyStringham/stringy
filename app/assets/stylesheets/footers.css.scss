@@ -38,7 +38,7 @@ footer {
   text-align: center;
   background: $dark-color;
   color: lighten($dark-color, 20%);
-  a {
+  a.social-link {
     @media screen and (max-width: 641px) {
       font-size: 4em;
     }

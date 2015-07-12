@@ -1,0 +1,15 @@
+!!!
+%html
+  %head
+    %meta{charset: "utf-8"}
+    %meta{name: "viewport", content: "width=device-width, initial-scale=1.0"}
+    %title{title: '5tringy Creative, Salk Lake design | Web Design | SEO | Graphic Design'}
+    %meta{name: "description", content: '5tringy Creative is a web design shop located in Utah. We specialize in the latest technologies, giving our clients the best resluts possible.'}
+
+    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+    = javascript_include_tag "vendor/modernizr"
+  %body
+
+    = yield

@@ -1,0 +1,27 @@
+.sticky
+  %nav.top-bar.mobile-nav{"data-topbar" => ""}
+    %ul.title-area
+      %li.name
+        %h1
+          %a{:href => "#"}
+            =image_tag("logo_b.svg", alt: "5tringy Creative Logo", class: "mobile-nav-logo")
+      %li.toggle-topbar.menu-icon
+        %a.mobile-nav-menu{:href => "#"}
+          %span
+    %section.top-bar-section
+      %ul.right.mobile-nav-list
+        %li.divider
+        %li
+          %a{:href => "#home"} Home
+        %li.divider
+        %li
+          %a{:href => "#services"} Services
+        %li.divider
+        %li
+          %a{:href => "#projects"} Projects
+        %li.divider
+        %li
+          %a{:href => "#about"} About
+        %li.divider
+        %li
+          %a{:href => "#contact"} Contact

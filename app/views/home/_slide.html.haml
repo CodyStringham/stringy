@@ -1,46 +1,46 @@
 #serv-slide.serv-slide
-  ul data-listname="Websites"
-    li
+  %ul{"data-listname" => "Websites"}
+    %li
       .slide-item
         =image_tag("slide_static.svg", alt: "5tringy Creative Logo")
-        span Static
-    li
+        %span Static
+    %li
       .slide-item
         =image_tag("slide_responsive.svg", alt: "5tringy Creative Logo")
-        span Responsive
-    li
+        %span Responsive
+    %li
       .slide-item
         =image_tag("slide_seo.svg", alt: "5tringy Creative Logo")
-        span SEO
-  ul data-listname="Design"
-    li
+        %span SEO
+  %ul{"data-listname" => "Design"}
+    %li
       .slide-item
         =image_tag("slide_logos.svg", alt: "5tringy Creative Logo")
-        span Logos
-    li
+        %span Logos
+    %li
       .slide-item
         =image_tag("slide_branding.svg", alt: "5tringy Creative Logo")
-        span Branding
-    li
+        %span Branding
+    %li
       .slide-item
         =image_tag("slide_ads.svg", alt: "5tringy Creative Logo")
-        span Ads
-  ul data-listname="Web Apps"
-    li
+        %span Ads
+  %ul{"data-listname" => "Web Apps"}
+    %li
       .slide-item
         =image_tag("slide_dynamic.svg", alt: "5tringy Creative Logo")
-        span Dynamic
-    li
+        %span Dynamic
+    %li
       .slide-item
         =image_tag("slide_functional.svg", alt: "5tringy Creative Logo")
-        span Functional
-    li
+        %span Functional
+    %li
       .slide-item
         =image_tag("slide_manageable.svg", alt: "5tringy Creative Logo")
-        span Manageable
+        %span Manageable
   .row
     .large-12.columns
-      nav
-        a href="#"  Websites
-        a href="#"  Design
-        a href="#"  Web Apps
+      %nav
+        %a{:href => "#"} Websites
+        %a{:href => "#"} Design
+        %a{:href => "#"} Web Apps

@@ -1,0 +1,103 @@
+%a.top-jump.fa.fa-arrow-up{:href => "#home"}
+
+= render partial: "home/mobile_nav"
+
+#home
+  .row
+    .large-8.large-offset-2.medium-10.medium-offset-1.columns
+      %a{:name => "home", "data-magellan-destination" => "home"}
+      =image_tag("logo.svg", alt: "5tringy Creative Logo", class: "logo")
+    .large-12.columns
+      %h3.home-header
+        Web Design
+        %i.fa.fa-plus
+        Development
+  .area-foot.geo-white
+
+
+#intro.content-container
+  = render partial: "home/desktop_nav"
+
+  .row.section-row
+    .large-12.columns
+      %h1.page-head-hidden 5tringy Creative, Salk Lake web design, SEO, Graphic Design.
+      %h3.page-head Rise above all the rest
+      %h4.subhead We focus on making you stand out in the best way possible. Don't be ashamed of your website anymore, we'll design you one so good your competition will be drooling!
+      .row.home-trifecta
+        .medium-4.columns.trifecta-cols
+          %span.fa.fa-leaf.fresh
+          %h4 Fresh
+          %p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        .medium-4.columns.trifecta-cols
+          %span.fa.fa-flash.agile
+          %h4 Agile
+          %p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        .medium-4.columns.trifecta-cols
+          %span.fa.fa-shield.shield
+          %h4 Stable
+          %p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+
+  .area-foot.bubs
+
+
+#services.content-container
+  %span{"data-magellan-destination" => "services"}
+  %a.magellan-link{:name => "services"}
+  .row.section-row.light
+    .large-12.columns
+      %h3.page-head.light Get back up to speed
+      %h4.subhead.light It's time to get serious about your visual identity, in today's market quality establishes trust. I'm here to help your customers build more confidence in your brand.
+
+  = render partial: 'home/slide'
+
+  .area-foot.angle
+
+
+#projects.content-container
+  %span{"data-magellan-destination" => "projects"}
+  %a.magellan-link{:name => "projects"}
+  .row.section-row
+    .large-12.columns
+      %h3.page-head Latest Work
+      %h4.subhead Here is some of our latest and greatest, click on one to learn more.
+
+  = render partial: "home/grid"
+
+  .area-foot.angle-bottom
+
+
+#about.content-container
+  %span{"data-magellan-destination" => "about"}
+  %a.magellan-link{:name => "about"}
+  .row.section-row
+    .large-12.columns
+      %h3.page-head.light Hello, my name is Cody
+      %h4.subhead.light 43% graphic designer, 21% web developer, 100% creative mastermind.
+  .row
+    .large-12.columns.text-center
+      %p.light Content: design background, front-end, back-end
+  .area-foot.angle
+
+
+#contact
+  %span{"data-magellan-destination" => "contact"}
+  %a.magellan-link{:name => "contact"}
+  .row.section-row
+    .large-12.columns
+      %h3.page-head Ready to start talking?
+      %h4.subhead Send me a message here, I'll get back to you as soon as I can
+      %i.fa.fa-comments.contact-icon
+
+  .row#contact-form-row
+    = render partial: "home/contact_form"
+
+  .area-foot.geo-dark
+
+
+%footer
+  .row
+    .large-12.columns
+      %a.social-link.fa.fa-facebook-square{:href => "#"}
+      %a.social-link.fa.fa-twitter-square{:href => "#"}
+      %a.social-link.fa.fa-linkedin-square{:href => "#"}
+      %p Copyright &COPY; #{Time.now.year}, 5tringy Creative

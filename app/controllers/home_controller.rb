@@ -1,17 +1,19 @@
 class HomeController < ApplicationController
 
   def index
-    @contact_email = Home.new
   end
 
-  def create
-    @contact_email = Home.new(params[:home])
-    if @contact_email.save
-      HomeMailer.contact_email(@contact_email).deliver
-      redirect_to contact_path(@contact_email)
-    else
-      render "index"
+  def contact
+    c = ContactForm.new(name: contact_params[:name], email: contact_params[:email], subject: contact_params[:subject], message: contact_params[:message])
+    if c.deliver
+      render :contact
     end
+  end
+
+  private
+
+  def contact_params
+    params.require(:contact).permit(:name, :email, :subject, :message)
   end
 
 end
