@@ -1,18 +1,7 @@
 #about {
   position: relative;
   background: $primary-color;
-  .cs-info {
-    p {
-      margin-top: 100px;
-    }
-    .cs-img {
-      padding: 2%;
-      margin-top: 20px;
-      border-radius: 100%;
-      width: 100%;
-    }
-    .cs-img-caption span {
-      font-size: .85em;
-    }
+  p {
+    margin-bottom: 60px;
   }
 }

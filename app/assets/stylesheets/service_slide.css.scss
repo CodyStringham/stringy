@@ -1,7 +1,7 @@
 .serv-slide {
   position: relative;
   margin-top: 30px;
-  height: 490px;
+  height: 500px;
 }
 
 .serv-slide ul {
@@ -52,7 +52,7 @@
 }
 
 .serv-slide ul li img {
-  max-width: 100%;
+  max-width: 80%;
   border: none;
 }
 
@@ -273,9 +273,14 @@
   user-select: none;
 }
 
+@media screen and (max-width: 1050px){
+  .serv-slide {
+    margin-top: -60px;
+  }
+}
+
 /* Media Queries */
 @media screen and (max-width: 910px){
-
   .serv-slide nav a {
     font-size: 12px;
     padding: 40px 10px 30px 14px;
@@ -305,10 +310,11 @@
     display: inline;
     bottom: auto;
     pointer-events: auto;
+    padding-top: 20px;
     &:before {
       display: block;
       position: relative;
-      bottom: -40px;
+      bottom: 20px;
       content: attr(data-listname);
       font-family: "NexaSlab";
       color: $light-color;
@@ -316,13 +322,15 @@
       padding-top: 40px;
       padding-right: 20px;
       text-align: right;
-      border-top: 1px solid lighten($secondary-color, 15%);
+      border-bottom: 1px solid lighten($secondary-color, 15%);
     }
     span {
       font-family: "NexaSlab";
       font-size: 1.5em;
       margin-top: 0px;
       display: block;
+      position: relative;
+      bottom: 5px;
     }
   }
 
