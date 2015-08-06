@@ -1,14 +1,14 @@
 .main
   %ul#grid-grid.grid-grid
     %li
-      %a{"data-description" => "Description here.", "data-largesrc" => "assets/1.jpg", "data-title" => "Project Example 1", :href => "#"}
+      %a{"data-description" => "Description here.", "data-largesrc" => "#{asset_path('1.jpg')}", "data-title" => "Project Example 1", :href => "#"}
         =image_tag("1.jpg", alt: "img01")
     %li
-      %a{"data-description" => "Description here.", "data-largesrc" => "assets/2.jpg", "data-title" => "Project Example 2", :href => "http://cargocollective.com/jaimemartinez/"}
+      %a{"data-description" => "Description here.", "data-largesrc" => "#{asset_path('2.jpg')}", "data-title" => "Project Example 2", :href => "http://cargocollective.com/jaimemartinez/"}
         =image_tag("2.jpg", alt: "img02")
     %li
-      %a{"data-description" => "Description here.", "data-largesrc" => "assets/3.jpg", "data-title" => "Project Example 3", :href => "http://cargocollective.com/jaimemartinez/"}
+      %a{"data-description" => "Description here.", "data-largesrc" => "#{asset_path('3.jpg')}", "data-title" => "Project Example 3", :href => "http://cargocollective.com/jaimemartinez/"}
         =image_tag("3.jpg", alt: "img03")
     %li
-      %a{"data-description" => "Description here.", "data-largesrc" => "assets/1.jpg", "data-title" => "Project Example 4", :href => "http://cargocollective.com/jaimemartinez/"}
+      %a{"data-description" => "Description here.", "data-largesrc" => "#{asset_path('4.jpg')}", "data-title" => "Project Example 4", :href => "http://cargocollective.com/jaimemartinez/"}
         =image_tag("1.jpg", alt: "img01")
