@@ -38,6 +38,8 @@ module Stringy
 
     config.time_zone = 'Mountain Time (US & Canada)'
 
+    config.secret_key_base = ENV['SECRET_TOKEN']
+
     # Use SQL instead of Active Record's schema dumper when creating the database.
     # This is necessary if your schema can't be completely dumped by the schema dumper,
     # like if you have constraints or database-specific column types

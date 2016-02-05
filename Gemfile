@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby '2.2.2'
+ruby '2.2.3'
 
 gem 'rails', '4.2.3'
 gem 'pg'
@@ -32,4 +32,10 @@ group :development do
   gem 'html2haml'
   gem 'ruby_gntp'
   gem 'quiet_assets'
+
+  gem 'capistrano'
+  gem 'capistrano3-puma'
+  gem 'capistrano-rails', require: false
+  gem 'capistrano-bundler', require: false
+  gem 'capistrano-rvm'
 end
