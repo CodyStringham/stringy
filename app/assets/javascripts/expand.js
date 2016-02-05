@@ -200,7 +200,7 @@ $(function() {
       };
 
     function init( config ) {
-      
+
       // the settings..
       settings = $.extend( true, {}, settings, config );
 
@@ -249,16 +249,16 @@ $(function() {
     }
 
     function initEvents() {
-      
+
       // when clicking an item, show the preview with the item´s info and large image.
       // close the item if already expanded.
       // also close if clicking on the item´s cross
       initItemsEvents( $items );
-      
+
       // on window resize get the window´s size again
       // reset some values..
       $window.on( 'debouncedresize', function() {
-        
+
         scrollExtra = 0;
         previewPos = -1;
         // save item´s offset
@@ -315,7 +315,7 @@ $(function() {
           preview.update( $item );
           return false;
         }
-        
+
       }
 
       // update previewPos
@@ -347,7 +347,7 @@ $(function() {
         // create Preview structure:
         this.$title = $( '<h3></h3>' );
         this.$description = $( '<p></p>' );
-        this.$href = $( '<a href="#">Visit website</a>' );
+        this.$href = $( '<a href="#" target="_blank">Visit website</a>' );
         this.$details = $( '<div class="grid-details"></div>' ).append( this.$title, this.$description, this.$href );
         this.$loading = $( '<div class="grid-loading"></div>' );
         this.$fullimage = $( '<div class="grid-fullimg"></div>' ).append( this.$loading );
@@ -366,7 +366,7 @@ $(function() {
         if( $item ) {
           this.$item = $item;
         }
-        
+
         // if already expanded remove class "grid-expanded" from current item and add it to new item
         if( current !== -1 ) {
           var $currentItem = $items.eq( current );
@@ -393,7 +393,7 @@ $(function() {
         this.$href.attr( 'href', eldata.href );
 
         var self = this;
-        
+
         // remove the current image in the preview
         if( typeof self.$largeImg != 'undefined' ) {
           self.$largeImg.remove();
@@ -411,13 +411,13 @@ $(function() {
               self.$largeImg = $img.fadeIn( 350 );
               self.$fullimage.append( self.$largeImg );
             }
-          } ).attr( 'src', eldata.largesrc ); 
+          } ).attr( 'src', eldata.largesrc );
         }
 
       },
       open : function() {
 
-        setTimeout( $.proxy( function() { 
+        setTimeout( $.proxy( function() {
           // set the height for the preview and the item
           this.setHeights();
           // scroll to position the preview in the right place
@@ -451,7 +451,7 @@ $(function() {
           }
 
         }, this ), 25 );
-        
+
         return false;
 
       },
@@ -497,7 +497,7 @@ $(function() {
         var position = this.$item.data( 'offsetTop' ),
           previewOffsetT = this.$previewEl.offset().top - scrollExtra,
           scrollVal = this.height + this.$item.data( 'height' ) + marginExpanded <= winsize.height ? position : this.height < winsize.height ? previewOffsetT - ( winsize.height - this.height ) : previewOffsetT;
-        
+
         $body.animate( { scrollTop : scrollVal }, settings.speed );
 
       },
@@ -510,7 +510,7 @@ $(function() {
       }
     }
 
-    return { 
+    return {
       init : init,
       addItems : addItems
     };
