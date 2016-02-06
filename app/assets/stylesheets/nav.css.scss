@@ -46,6 +46,15 @@ a.magellan-link {
   background: #fff;
   display: none;
   height: 55px;
+  &:after {
+    position: absolute;
+    content: '';
+    bottom: -2px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: rgba(0,0,0,0.1);
+  }
   @media screen and (max-width: 40em) {
     display: none;
   }
@@ -59,7 +68,7 @@ a.magellan-link {
       &:last-child {
         margin-right: 20px;
       }
-      &.active a {
+      &.active a, a:hover {
         background: $light-color;
         color: $dark-color !important;
       }
@@ -70,13 +79,9 @@ a.magellan-link {
         margin: 0;
         padding: 5px 10px;
         width: 100px;
-        border-radius: 30px;
+        // border-radius: 30px;
         @media screen and (max-width: 780px) {
           width: 75px;
-        }
-        &:hover {
-          color: $dark-color !important;
-          background: $light-color !important;
         }
       }
     }

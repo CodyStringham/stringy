@@ -347,7 +347,7 @@ $(function() {
         // create Preview structure:
         this.$title = $( '<h3></h3>' );
         this.$description = $( '<p></p>' );
-        this.$href = $( '<a href="#" target="_blank">Visit website</a>' );
+        // this.$href = $( '<a href="#" target="_blank">Visit website</a>' );
         this.$details = $( '<div class="grid-details"></div>' ).append( this.$title, this.$description, this.$href );
         this.$loading = $( '<div class="grid-loading"></div>' );
         this.$fullimage = $( '<div class="grid-fullimg"></div>' ).append( this.$loading );
@@ -382,7 +382,7 @@ $(function() {
         // update preview´s content
         var $itemEl = this.$item.children( 'a' ),
           eldata = {
-            href : $itemEl.attr( 'href' ),
+            // href : $itemEl.attr( 'href' ),
             largesrc : $itemEl.data( 'largesrc' ),
             title : $itemEl.data( 'title' ),
             description : $itemEl.data( 'description' )
@@ -390,7 +390,7 @@ $(function() {
 
         this.$title.html( eldata.title );
         this.$description.html( eldata.description );
-        this.$href.attr( 'href', eldata.href );
+        // this.$href.attr( 'href', eldata.href );
 
         var self = this;
 

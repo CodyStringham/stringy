@@ -9,8 +9,8 @@
       =image_tag("logo.svg", alt: "5tringy Creative Logo", class: "logo")
     .large-12.columns
       %h3.home-header
-        Web Design
-        %i.fa.fa-plus
+        Design
+        %span.fa.fa-plus
         Development
   .area-foot.geo-white
 
@@ -27,15 +27,15 @@
         .medium-4.columns.trifecta-cols
           %span.fa.fa-leaf.fresh
           %h4 Fresh
-          %p Description here.
+          %p Usually developers don't much like design. It seems to "artsy" for the common techie&hellip; that is not the case here. Design and Development go hand in hand. Check out the projects below and see for yourself!
         .medium-4.columns.trifecta-cols
           %span.fa.fa-flash.agile
           %h4 Agile
-          %p Description here.
+          %p Quick iterations. Quick applications. Everything we do is agile, we work quickly to get you ideas that work developed in software that fortune 500 companies would use.
         .medium-4.columns.trifecta-cols
           %span.fa.fa-shield.shield
           %h4 Stable
-          %p Description here.
+          %p We take quality assurence seriously. No shortcuts, or glass walls. Your applications stability and security are paramount to how we measure our success.
 
   .area-foot.bubs
 
@@ -46,7 +46,7 @@
   .row.section-row.light
     .large-12.columns
       %h3.page-head.light Get back up to speed
-      %h4.subhead.light It's time to get serious about your visual identity, in today's market quality establishes trust. I'm here to help your customers build more confidence in your brand.
+      %h4.subhead.light It's time to get serious about your visual identity, in today's market quality establishes trust. We're here to help your customers build more confidence in your brand.
 
   = render partial: 'home/slide'
 
@@ -72,10 +72,17 @@
   .row.section-row
     .large-12.columns
       %h3.page-head.light Hello, my name is Cody
-      %h4.subhead.light 43% graphic designer, 21% web developer, 100% creative mastermind.
-  .row
-    .large-12.columns.text-center
-      %p.light Content: design background, front-end, back-end
+      %h4.subhead.light 43% graphic designer, 31% web developer, 92% creative mastermind.
+  .row.about-content
+    .large-3.small-12.columns
+      .cody-wrap
+        = image_tag('cody.jpg')
+    .large-9.small-12.columns
+      %p.light
+        I have an extensive design background, and have been fostering my development career. I have worked at companies large and small over the years, and currently spend most of my time as a Software Developer at
+        %span= link_to 'Access Development', 'http://www.accessdevelopment.com/', class: ''
+        in Salt Lake City, Utah. In my free time, I could be making awesome things for you!
+
   .area-foot.angle
 
 
@@ -97,7 +104,6 @@
 %footer
   .row
     .large-12.columns
-      %a.social-link.fa.fa-facebook-square{:href => "#"}
-      %a.social-link.fa.fa-twitter-square{:href => "#"}
-      %a.social-link.fa.fa-linkedin-square{:href => "#"}
+      %a.social-link.fa.fa-twitter-square{:href => "https://twitter.com/cstringy"}
+      %a.social-link.fa.fa-linkedin-square{:href => "https://www.linkedin.com/in/codystringham"}
       %p Copyright &COPY; #{Time.now.year}, 5tringy Creative

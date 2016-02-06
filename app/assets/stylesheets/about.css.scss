@@ -1,7 +1,22 @@
 #about {
   position: relative;
   background: $primary-color;
-  p {
-    margin-bottom: 60px;
+  .about-content {
+    margin-top: 40px;
+    .cody-wrap {
+      border-radius: 100%;
+      overflow: hidden;
+      max-width: 125px;
+      margin: 0 auto;
+      @media screen and (max-width: 70em) {
+        margin: 0 auto 40px;
+      }
+    }
+    p {
+      margin-bottom: 60px;
+      a {
+        color: $dark-color;
+      }
+    }
   }
 }
