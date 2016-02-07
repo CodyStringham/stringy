@@ -1,4 +1,4 @@
-* {
+a {
   transition: background .3s ease, color .3s ease, box-shadow .3s ease, transform 1s ease;
   -webkit-transition: background .3s ease, color .3s ease, -webkit-box-shadow .3s ease, -webkit-transform 1s ease;
   -moz-transition: background .3s ease, color .3s ease, -moz-box-shadow .3s ease, -moz-transform 1s ease;
@@ -7,11 +7,14 @@
 }
 
 @font-face {
-    font-family: 'NexaSlab';
-    src: url(font-path('NexaSlab.eot') + "?#iefix") format('embedded-opentype'),
-         url(font-path('NexaSlab.woff')) format('woff'),
-         url(font-path('NexaSlab.ttf'))  format('truetype'),
-         url(font-path('NexaSlab.svg') + "#NexaSlab") format('svg');
+    font-family: 'yellowtail';
+    src: url(font-path('Yellowtail.eot'));
+    src: url(font-path('Yellowtail.eot?') + '#iefix') format('embedded-opentype'),
+         url(font-path('Yellowtail.woff')) format('woff'),
+         url(font-path('Yellowtail.ttf')) format('truetype'),
+         url(font-path('Yellowtail.svg') + '#yellowtailregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
 }
 
 html, body {

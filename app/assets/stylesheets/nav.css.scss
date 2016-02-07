@@ -21,6 +21,9 @@
     color: #fff;
     background: lighten($dark-color, 15%)
   }
+  &:active, &:focus {
+    color: $light-color;
+  }
   @media screen and (max-width: 40em) {
     display: none;
   }
@@ -79,7 +82,7 @@ a.magellan-link {
         margin: 0;
         padding: 5px 10px;
         width: 100px;
-        // border-radius: 30px;
+        border-radius: 30px;
         @media screen and (max-width: 780px) {
           width: 75px;
         }

@@ -15,7 +15,10 @@
     p {
       margin-bottom: 60px;
       a {
-        color: $dark-color;
+        color: rgba(255,255,255,0.6);
+        &:hover {
+          color: #fff;
+        }
       }
     }
   }
