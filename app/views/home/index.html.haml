@@ -26,15 +26,15 @@
       %h4.subhead We focus on making you stand out in the best way possible. Don't be ashamed of your website anymore, we'll design you one so good your competition will be drooling!
       .row.home-trifecta
         .medium-4.columns.trifecta-cols
-          .tri-icon.leaf= draw_svg('home-leaf', 'leaf')
+          .tri-icon.leaf= draw_svg('home-leaf', 'leaf', 100)
           %h4 Fresh
           %p We focus on great products. We know how important design is, and how tightly design should be coupled to development. Check out some of the projects below and see for yourself.
         .medium-4.columns.trifecta-cols
-          .tri-icon.bolt= draw_svg('home-bolt', 'bolt')
+          .tri-icon.bolt= draw_svg('home-bolt', 'bolt', 100)
           %h4 Agile
           %p Quick iterations. Quick applications. Everything we do is agile, we work quickly to get you ideas that fit your needs. We design and develop your projects with the best tools available. We keep you up to date in market that never slows down.
         .medium-4.columns.trifecta-cols
-          .tri-icon.shield= draw_svg('home-shield', 'shield')
+          .tri-icon.shield= draw_svg('home-shield', 'shield', 100)
           %h4 Stable
           %p We take quality assurence seriously. No shortcuts, or glass walls. Your applications stability and security are paramount to how we measure our success.
 
@@ -61,6 +61,7 @@
     .large-12.columns
       %h3.page-head Latest Work
       %h4.subhead Here is some of our latest and greatest, click on one to learn more.
+      %i.projects-icon= draw_svg('work-projects', 'projects', 200)
 
   = render partial: "home/grid"
 
@@ -74,6 +75,7 @@
     .large-12.columns
       %h3.page-head.light Hello, my name is Cody
       %h4.subhead.light 43% graphic designer, 31% web developer, 92% creative mastermind.
+      %i.lego-icon= draw_svg('about-lego', 'lego', 200)
   .row.about-content
     .large-3.small-12.columns
       .cody-wrap
@@ -94,7 +96,7 @@
     .large-12.columns
       %h3.page-head Ready to start talking?
       %h4.subhead Send me a message here, I'll get back to you as soon as I can
-      %i.contact-icon= draw_svg('contact-talk', 'talk')
+      %i.contact-icon= draw_svg('contact-talk', 'talk', 400)
 
   .row#contact-form-row
     = render partial: "home/contact_form"

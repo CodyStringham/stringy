@@ -2,4 +2,24 @@
   position: relative;
   background: $light-color;
   padding-bottom: 200px;
+  h3, h4 {
+    position: relative;
+    z-index: 10;
+  }
+}
+
+.projects-icon {
+  color: lighten($light-color, 5%);
+  position: absolute;
+  top: -40px;
+  right: -40px;
+  z-index: 0;
+  #work-projects {
+    max-height: 350px;
+    width: 100%;
+  }
+  @media screen and (max-width: 400px) {
+    right: 30px;
+    font-size: 15em;
+  }
 }
