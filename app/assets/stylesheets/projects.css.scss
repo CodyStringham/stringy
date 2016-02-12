@@ -12,14 +12,10 @@
   color: lighten($light-color, 5%);
   position: absolute;
   top: -40px;
-  right: -40px;
+  right: 20px;
   z-index: 0;
   #work-projects {
     max-height: 350px;
     width: 100%;
-  }
-  @media screen and (max-width: 400px) {
-    right: 30px;
-    font-size: 15em;
   }
 }
