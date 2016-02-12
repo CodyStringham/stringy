@@ -1,4 +1,11 @@
 $ ->
+  theLoader = $('#awesome-load-screen')
+  theLoader.addClass('offscreen')
+  setTimeout(->
+    theLoader.remove()
+  , 1500)
+
+$ ->
 
   # Variable block
   fixNav = $('#fixed-nav')
