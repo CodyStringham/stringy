@@ -2,10 +2,10 @@ $ ->
   theLoader = $('#awesome-load-screen')
   setTimeout(->
     theLoader.addClass('offscreen')
-  , 1000)
+  , 2000)
   setTimeout(->
     theLoader.remove()
-  , 2500)
+  , 3500)
 
 $ ->
 
