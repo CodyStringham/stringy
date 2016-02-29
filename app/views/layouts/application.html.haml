@@ -11,6 +11,7 @@
     = csrf_meta_tags
     = javascript_include_tag "vendor/modernizr"
   %body
+    = render 'layouts/google_tags'
     #awesome-load-screen
       #awesome-load-spinner.fa.fa-spinner.fa-pulse
     = yield
